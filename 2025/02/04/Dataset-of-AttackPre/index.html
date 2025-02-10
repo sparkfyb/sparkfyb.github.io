@@ -139,14 +139,15 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://img-blog.csdnimg.cn/6d9b212c8fa64a52b9ef32fb8108390f.jpeg#pic_center);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Dataset of AttackPre</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h1>Abstract</h1>
 <p>在开始一个研究的时候，数据集总是那么重要；比如说我正在尝试完成一个攻击预测的相关研究，于是就有了这篇文章。<br>
-必须说明的是，一个数据集往往并不只用于一个研究，比如DARPA数据集，在入侵检测领域已经成为了标准数据集，而在攻击预测领域，也常常被用来作为基准数据集。但在这里，我们更关注于攻击预测领域的应用。</p>
+必须说明的是，一个数据集往往并不只用于一个研究，比如DARPA数据集，在入侵检测领域已经成为了标准数据集，而在攻击预测领域，也常常被用来作为基准数据集。但在这里，我们更关注于攻击预测领域的应用。<br>
+<s>(很戏剧化的是，我已经在考虑要不要研究入侵检测了)</s></p>
 <h1>Content</h1>
 <h2 id="DARPA">DARPA</h2>
 <blockquote>
@@ -163,6 +164,29 @@
 <p>林肯实验室在网络空间安全的相关研究可以在<a target="_blank" rel="noopener" href="https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences">这里</a>找到。DARPA所有相关的数据集则是从<a target="_blank" rel="noopener" href="https://archive.ll.mit.edu/ideval/data/index.html">这里</a>找到的；实际上后面这个网站已经不怎么使用了——可能是因为实在是太久了。</p>
 <h3 id="应用">应用</h3>
 <p>写这玩意主要是为了看在攻击预测领域的应用，所以只关注在攻击预测领域的应用：</p>
+<h2 id="SABU">SABU</h2>
+<blockquote>
+<p>The dataset consists of the main file with the intrusion detection alerts and four auxiliary files with enriched data. The alerts were collected from the SABU alert sharing platform for one week and are stored in the IDEA format. Almost 12 million alerts were collected from 34 intrusion detection systems, honeypots, and other data sources deployed in 3 distinct organizations. The IP addresses, hostname, URLs, and other identifiers in the alerts are anonymized, but the information in the auxiliary files allow for the profiling of malicious actors. The auxiliary files contain information on over 1.7 million IP addresses contained in the alerts, the most frequent identifiers of attackers and victims of observed events. Reputation scores, geolocation, and data from PassiveDNS system are provided. The reputation scores include information on the presence of the IP addresses on publicly available blacklists or results of scans by Internet-wide scanners. The geolocation provides the approximate geographical locations of the IP addresses; a data layer for a common geographical information system is provided. The PassiveDNS data are in the form of a feature vector of domain names the IP addresses were translated to in the time of their involvement in malicious activities.</p>
+</blockquote>
+<p>一个共同的入侵检测警报共享平台SABU，该平台由捷克国家研究和教育网络（NREN）运营。使用SABU平台从2019年3月11日至3月17日收集的一周内的入侵检测警报数据。数据来自34个入侵检测系统、蜜罐和其他数据源。</p>
+<h3 id="来源-v2">来源</h3>
+<p>数据集来源：<a href="#https://data.mendeley.com/datasets/p6tym3fghz/1">Dataset of intrusion detection alerts from a sharing platform</a></p>
+<h3 id="内容">内容</h3>
+<blockquote>
+<p>The list of files goes as follow:<br>
+dataset.idea.zip - compressed dataset.idea file with the alerts in IDEA format, one alert per line,<br>
+Aux_1A_Geolocation-csv - CSV file with geolocation information,<br>
+Aux_1B_GIS_data.zip - compressed archive of spatial data for use with a geographical information system ArcGIS,<br>
+Aux_2_Passive_DNS - CSV file with characteristics of DNS records for the IP addresses in the data obtained via PassiveDNS system,<br>
+Aux_3_Enrichment - compressed archive of various other enrichments of IP addresses, splitted per days, see README in the archive.</p>
+</blockquote>
+<h2 id="Defcon">Defcon</h2>
+<p>Defcon是全球最大的互联网安全社区。Defcon提供了&quot;夺旗&quot; ( Capture the Flag，CtF )大赛，这是一场计算机安全攻防技能的较量。保卫自己的旗帜，同时要想方设法败坏其他球队的旗帜。标志是团队服务器上的数据文件。在博弈过程中，攻击者试图将别人服务器上的旗帜替换为自己的旗帜，而防御者则试图将自己的旗帜保留在自己的服务器上。</p>
+<h3 id="来源-v3">来源</h3>
+<p>可以在<a target="_blank" rel="noopener" href="https://www.defcon.org/html/links/dc-ctf.html" title="ctfs">这里</a>找到历届比赛的内容，以第17届ctf17为例，其可下载内容包含两个文件：<em>DEF CON 17 Hacking Conference CTF - BinJitsu - Capture the Flag complete packet capture.rar</em> 和 <em>DEF CON 17 Hacking Conference - CTF Binaries.zip</em></p>
+<h3 id="内容-v2">内容</h3>
+<h2 id="DAPT2020">DAPT2020</h2>
+<h3 id="来源-v4">来源</h3>
 <h1>Reference</h1>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36165570/article/details/104575813">https://blog.csdn.net/qq_36165570/article/details/104575813</a><br>
 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/bonelee/p/14048702.html">https://www.cnblogs.com/bonelee/p/14048702.html</a></p>
