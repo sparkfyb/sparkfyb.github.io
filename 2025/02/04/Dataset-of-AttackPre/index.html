@@ -140,24 +140,32 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Hello World</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Dataset of AttackPre</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1>Abstract</h1>
+<p>在开始一个研究的时候，数据集总是那么重要；比如说我正在尝试完成一个攻击预测的相关研究，于是就有了这篇文章。<br>
+必须说明的是，一个数据集往往并不只用于一个研究，比如DARPA数据集，在入侵检测领域已经成为了标准数据集，而在攻击预测领域，也常常被用来作为基准数据集。但在这里，我们更关注于攻击预测领域的应用。</p>
+<h1>Content</h1>
+<h2 id="DARPA">DARPA</h2>
+<blockquote>
+<p>‘‘DARPA (Defense Advanced Research Projects Agency) is a research and development agency of the United States Department of Defense. It is responsible for funding and managing research and development projects in various areas of science and technology, including cybersecurity.’’</p>
+</blockquote>
+<p>DARPA数据集是迄今为止网络入侵检测领域的标准数据集，该数据集包括DARPA 1998、DARPA 1999和DARPA 2000三个数据集。</p>
+<h3 id="DARPA-1998数据集">DARPA 1998数据集</h3>
+<p>收集了9周的 TCPDUMP网络连接和系统审计数据，7周的训练数据，2周的测试数据，包含了Probe、DoS、R2L、U2R四大类攻击。</p>
+<h3 id="DARPA-1999数据集">DARPA 1999数据集</h3>
+<p>DARPA 1999覆盖了Probe、DoS、R2L、U2R和Data等5大类58种典型攻击方式，是目前最为全面的攻击测试数据集，作为研究领域共同认可及广泛使用的基准数据集，DARPA 1999评测数据给出了5周的模拟数据。其中前两周是提供给参于评测者的训练数据：第1，3周为不包含任何攻击的正常数据；第2周中插入了属于18种攻击类型的43次攻击实例，第4,5周用于测试。</p>
+<h3 id="DARPA-2000数据集">DARPA 2000数据集</h3>
+<p>DARPA 2000在DARPA 1999基础上攻击数据中加入了DDoS (Distributed Deny of Service)攻击，并增加了内部攻击、内部监听数据，以及Windows NT流量和攻击。</p>
+<h3 id="来源">来源</h3>
+<p>林肯实验室在网络空间安全的相关研究可以在<a target="_blank" rel="noopener" href="https://www.ll.mit.edu/r-d/cyber-security-and-information-sciences">这里</a>找到。DARPA所有相关的数据集则是从<a target="_blank" rel="noopener" href="https://archive.ll.mit.edu/ideval/data/index.html">这里</a>找到的；实际上后面这个网站已经不怎么使用了——可能是因为实在是太久了。</p>
+<h3 id="应用">应用</h3>
+<p>写这玩意主要是为了看在攻击预测领域的应用，所以只关注在攻击预测领域的应用：</p>
+<h1>Reference</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36165570/article/details/104575813">https://blog.csdn.net/qq_36165570/article/details/104575813</a><br>
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bonelee/p/14048702.html">https://www.cnblogs.com/bonelee/p/14048702.html</a></p>
 
             </div>
 
@@ -220,8 +228,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://example.com/2025/02/03/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2025/02/03/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://example.com/2025/02/04/Dataset-of-AttackPre/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/04/Dataset-of-AttackPre/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

@@ -140,24 +140,27 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Hello World</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >How to use your Hexo</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1>Abstract</h1>
+<p>Hexo作为刚开始接触github博客的傻瓜式部署非常便利，但说实话我不是很喜欢当下这个模板，以后大概率会换的。这篇文章则更加简单，实际上就是记录一下Hexo的一系列操作——至少方便我每次更新我的blog。<br>
+PS：本文的题目参考了知名动画电影驯龙高手：How to Train Your Dragon。</p>
+<h1>Content</h1>
+<h2 id="install">install</h2>
+<h2 id="blogs">blogs</h2>
+<h3 id="基本操作">基本操作</h3>
+<p>预览：<code>hexo s</code><br>
+新建：<code>hexo new 'filename'</code><br>
+生成：<code>hexo g</code><br>
+上传：<code>hexo d</code></p>
+<h3 id="img">img</h3>
+<p>在Hexo中插入图片，需要安装插件：<br>
+<code>npm install hexo-asset-img --save</code><br>
+<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
+<h1>Reference</h1>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/392994381">https://zhuanlan.zhihu.com/p/392994381</a></p>
 
             </div>
 
@@ -220,8 +223,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://example.com/2025/02/03/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2025/02/03/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://example.com/2025/02/03/How%20to%20use%20your%20Hexo/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/03/How%20to%20use%20your%20Hexo/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

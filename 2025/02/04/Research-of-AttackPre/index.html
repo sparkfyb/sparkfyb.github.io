@@ -1,0 +1,539 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Think What I See, See What I Think
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/BG1.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Spark</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Categories</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="About">
+		                About
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="Tags">
+		                Tags
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/works/" title="Works">
+		                Works
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/sparkfyb" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Research of AttackPre</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1>Abstract</h1>
+<p>这里记录一些关于攻击预测的研究和我阅读时的笔记，基本都是AI辅助阅读的，理解或者是专有名词上有错误还请指正。<br>
+这里以记录为主，一些我认为从技术角度上有用的论文会单独发精读的文章。<br>
+在这里列一个目录表，方便查阅：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">题目</th>
+<th style="text-align:center">单位</th>
+<th style="text-align:center">年份</th>
+<th style="text-align:center">来源</th>
+<th style="text-align:center">数据集</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="#Cyber-Attack-Prediction-Based-on-Network-Intrusion-Detection-Systems-for-Alert-Correlation-Techniques-A-Survey">Cyber-Attack Prediction Based on Network Intrusion Detection Systems for Alert Correlation Techniques: A Survey</a></td>
+<td style="text-align:center">School of Computing, Faculty of Engineering, Universiti Teknologi Malaysia (UTM)</td>
+<td style="text-align:center">2021</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">\</td>
+<td style="text-align:center">综述类文章，告警预测</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#%E5%9F%BA%E4%BA%8E%E7%BD%91%E7%BB%9C%E9%98%B2%E5%BE%A1%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E7%9A%840day%E6%94%BB%E5%87%BB%E8%B7%AF%E5%BE%84%E9%A2%84%E6%B5%8B%E6%96%B9%E6%B3%95">基于网络防御知识图谱的0day攻击路径预测方法</a></td>
+<td style="text-align:center">信息工程大学</td>
+<td style="text-align:center">2022</td>
+<td style="text-align:center">网络与信息安全学报</td>
+<td style="text-align:center">自建</td>
+<td style="text-align:center">路径排序算法</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#CyberSecurity-Attack-Prediction-A-Deep-Learning-Approach">CyberSecurity Attack Prediction: A Deep Learning Approach</a></td>
+<td style="text-align:center">Institut Supérieur des Sciences Appliquées et de Technologie de Sousse, University of Sousse, Tunisia</td>
+<td style="text-align:center">2020</td>
+<td style="text-align:center">13th International Conference on Security of Information and Networks (SIN 2020)</td>
+<td style="text-align:center">Defcon提供的Ctf’17</td>
+<td style="text-align:center">深度学习</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#Predictive-Methods-in-Cyber-Defense-Current-Experience-and-Research-Challenges">Predictive Methods in Cyber Defense: Current Experience and Research Challenges</a></td>
+<td style="text-align:center">Institute of Computer Science, Masaryk University, Czech Republic</td>
+<td style="text-align:center">2021</td>
+<td style="text-align:center">Future Generation Computer Systems</td>
+<td style="text-align:center">自建</td>
+<td style="text-align:center">三个方法和任务</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#Predictive-Cyber-Situational-Awareness-and-Personalized-Blacklisting-A-Sequential-Rule-Mining-Approach">Predictive Cyber Situational Awareness and Personalized Blacklisting: A Sequential Rule Mining Approach</a></td>
+<td style="text-align:center">Institute of Computer Science, Masaryk University, Czech Republic</td>
+<td style="text-align:center">2020</td>
+<td style="text-align:center">Future Generation Computer Systems</td>
+<td style="text-align:center">自建</td>
+<td style="text-align:center">关联规则</td>
+</tr>
+</tbody>
+</table>
+<h1>Content</h1>
+<h2 id="Cyber-Attack-Prediction-Based-on-Network-Intrusion-Detection-Systems-for-Alert-Correlation-Techniques-A-Survey">Cyber-Attack Prediction Based on Network Intrusion Detection Systems for Alert Correlation Techniques: A Survey</h2>
+<p><em>Year: 2021, Authors: School of Computing, Faculty of Engineering, Universiti Teknologi Malaysia (UTM)</em></p>
+<h3 id="Abstract">Abstract:</h3>
+<blockquote>
+<p>Advanced cyber attacks consist of multiple stages aimed at being stealthy and elusive. Such attack patterns leave their footprints spatio-temporally dispersed across many different logs in victim machines. However, existing log-mining intrusion analysis systems typically target only a single type of log to discover evidence of an attack and therefore fail to exploit fundamental inter-log connections. The output of such single-log analysis can hardly reveal the complete attack story for complex, multi-stage attacks. Additionally, some existing approaches require heavyweight system instrumentation, which makes them impractical to deploy in real production environments. To address these problems, we present HERCULE, an automated multi-stage log-based intrusion analysis system. Inspired by graph analytics research in social network analysis, we model multi-stage intrusion analysis as a community discovery problem. HERCULE builds multi-dimensional weighted graphs by correlating log entries across multiple lightweight logs that are readily available on commodity systems. From these, HERCULE discovers any “attack communities” embedded within the graphs. Our evaluation with 15 well known APT attack families demonstrates that HERCULE can reconstruct attack behaviors from a spectrum of cyber attacks that involve multiple stages with high accuracy and low false positive rates.</p>
+</blockquote>
+<h3 id="Record">Record:</h3>
+<p>综述类文章，主要回顾了基于NIDS入侵警报的最新网络攻击预测、其模型及限制。下表比较好的说明了文章的主要内容：</p>
+<img src="/2025/02/04/Research-of-AttackPre/P1-1.png" class="" title="P1-1">  
+<p>意思是，这些综述里就我们做了数据集的研究。</p>
+<ol>
+<li>有关预测：</li>
+</ol>
+<blockquote>
+<p>NIDS technology plays an essential role in protecting communication networks from cybercrime. However, these technologies are not viable in predicting future attacks. It produces much of alerts when attack activities/intrusions have effectively occurred. A proactive approach is to predict and lead conceivable attacks to prevent damage. However, network intrusion prediction is still an active investigation.</p>
+</blockquote>
+<p>大意是检测不行了，预测更牛，但是也更难；那么预测到底有哪些方法？请看：</p>
+<img src="/2025/02/04/Research-of-AttackPre/P1-2.png" class="" title="P1-2">  
+<p>简单汉化一下：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深度学习</td>
+<td>在特征学习中很有用</td>
+<td>警报关联如何应用</td>
+</tr>
+<tr>
+<td>贝叶斯网络</td>
+<td>检测知名攻击的准确性高</td>
+<td></td>
+</tr>
+<tr>
+<td>关系时间序列</td>
+<td>在告警减少、聚类、聚合和模式匹配方面表现良好</td>
+<td></td>
+</tr>
+<tr>
+<td>机器学习和数据挖掘</td>
+<td>在静态网络中表现良好，用于表示明确定义的攻击场景</td>
+<td></td>
+</tr>
+<tr>
+<td>序列模式挖掘</td>
+<td>这些方法能够检测已知和未知的攻击场景</td>
+<td></td>
+</tr>
+<tr>
+<td>网络攻击图</td>
+<td>在已知攻击的高准确率</td>
+<td></td>
+</tr>
+<tr>
+<td>计划库</td>
+<td>关联结果易理解，能够发现所有攻击场景的变体</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>相关工作单独列出来，写在表里有些难看：</p>
+<blockquote>
+<p>深度学习：<br>
+ Shallow and Deep Learning Approaches for Network Intrusion Alert Prediction<br>
+ GRU-based deep learning approach for network intrusion alert prediction<br>
+ Network entity characterization and attack prediction<br>
+贝叶斯网络：<br>
+关系时间序列：<br>
+机器学习和数据挖掘：<br>
+序列模式挖掘：<br>
+网络攻击图：<br>
+计划库：</p>
+</blockquote>
+<p>懒得写了，现在应该都比较关注深度学习的方法吧。</p>
+<ol>
+<li>有关告警：</li>
+</ol>
+<p>大量低质量警报是一个主要问题，需要进行告警关联；现有的方法有：<br>
+1、基于相似性的方法主要关注于提升警报属性的质量问题。<br>
+2、基于统计的方法则致力于通过警报之间的统计或因果关系来识别攻击场景。<br>
+3、基于知识的方法则通过预定义的重要性来处理攻击定义。<br>
+此外，基于混合的方法能够综合利用这三种关联方法的优势。<br>
+（具体的内容感觉和预测没关系，不作记录）</p>
+<ol start="3">
+<li>有关关联告警模型：</li>
+</ol>
+<blockquote>
+<p>The AC model consists of several tasks that include normalization, reduction, severity/prioritization, attack detection, and prediction to present a viewpoint of network security situations.</p>
+</blockquote>
+<p>一个合理的流程包括规范化-&gt;简化-&gt;严重性/优先级排序-&gt;攻击检测和预测</p>
+<ul>
+<li>规范化： <em>Aggregation and correlation of intrusion-detection alerts</em> 就异构告警数据的格式化给出了IDMEF标准，<em>Security event taxonomy mapping</em> 则给出了IDEA标准,，其JSON格式如下：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;Format&quot;</span>:<span class="string">&quot;IDEAO&quot;</span>,</span><br><span class="line">  <span class="string">&quot;ID&quot;</span>:<span class="string">&quot;3ad275e3-559a-45c0-8299-6807148ce157&quot;</span>,</span><br><span class="line">  <span class="string">&quot;DetectTime&quot;</span>:<span class="string">&quot;2019-03-22T10:12:56Z&quot;</span>,</span><br><span class="line">  <span class="string">&quot;Category&quot;</span>:[<span class="string">&quot;Recon.scanning&quot;</span>],</span><br><span class="line">  <span class="string">&quot;ConnCount&quot;</span>:<span class="number">633</span>,</span><br><span class="line">  <span class="string">&quot;Descriptin&quot;</span>:<span class="string">&quot;Ping scan&quot;</span>,</span><br><span class="line">  <span class="string">&quot;Source&quot;</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="string">&quot;IP4&quot;</span>:[<span class="string">&quot;11.12.13.14&quot;</span>],</span><br><span class="line">    <span class="string">&quot;Proto&quot;</span>:[<span class="string">&quot;icmp&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;Target&quot;</span>:[</span><br><span class="line">    &#123;</span><br><span class="line">    <span class="string">&quot;Proto&quot;</span>:[<span class="string">&quot;icmp&quot;</span>]，</span><br><span class="line">    <span class="string">&quot;IP4&quot;</span>:[<span class="string">&quot;10.10.10.0/24&quot;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;Node&quot;</span>:[</span><br><span class="line">    <span class="string">&quot;Name&quot;</span>:<span class="string">&quot;cz.cesnet.tarpit&quot;</span>,</span><br><span class="line">    <span class="string">&quot;SW&quot;</span>:[<span class="string">&quot;aBrea&quot;</span>],</span><br><span class="line">    <span class="string">&quot;Type&quot;</span>:[<span class="string">&quot;Connection&quot;</span>，<span class="string">&quot;Tarpit&quot;</span>]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>告警简化：主要分为聚合和过滤。
+<ul>
+<li>聚合：</li>
+<li>过滤：</li>
+</ul>
+</li>
+<li>严重性/优先级排序：</li>
+<li>攻击预测：事实上已经在’‘有关预测’'部分说过了。<s>（突然感觉被欺骗了）</s></li>
+<li>数据集：</li>
+</ul>
+<img src="/2025/02/04/Research-of-AttackPre/P1-4.png" class="" title="P1-4 alt title">
+<h3 id="Summary">Summary:</h3>
+<p>标题也写着“告警关联技术”。从这里面找预测感觉也不那么靠谱。但是还是发现了几篇文章。<br>
+比较重要的是，对一般检测数据集，我们可能还需要进行一个合理的流程：规范化-&gt;简化-&gt;严重性/优先级排序-&gt;攻击检测和预测对告警进行处理。<br>
+第一篇在兴头上写的详细，后面会非常非常简单。</p>
+<h2 id="基于网络防御知识图谱的0day攻击路径预测方法">基于网络防御知识图谱的0day攻击路径预测方法</h2>
+<p><em>Year: 2022, Authors: 信息工程大学</em></p>
+<h3 id="Abstract-v2">Abstract:</h3>
+<blockquote>
+<p>针对 0day 漏洞未知性造成的攻击检测难问题，提出了一种基于知识图谱的 0day 攻击路径预测方法。通过从现有关于网络安全领域本体的研究成果及网络安全数据库中抽取“攻击”相关的概念及实体，构建网络防御知识图谱，将威胁、脆弱性、资产等离散的安全数据提炼为互相关联的安全知识。在此基础上，依托知识图谱整合的知识，假设并约束0day漏洞的存在性、可用性及危害性等未知属性，并将“攻击”这一概念建模为知识图谱中攻击者实体与设备实体间存在的一种关系，从而将攻击预测问题转化为知识图谱的链接预测问题。采用基于路径排序算法的知识图谱推理方法挖掘目标系统中可能发生的 0day 攻击，并生成 0day 攻击图。复用分类器输出的预测得分作为单步攻击发生概率，通过计算并比较不同攻击路径的发生概率，预测分析 0day 攻击路径。实验证明，所提方法能够依托知识图谱提供的知识体系，为攻击预测提供较全面的知识支持，降低预测分析对专家模型的依赖，并较好地克服 0day 漏洞未知性对预测分析造成的不利影响，提高了 0day 攻击预测的准确性，并且借助路径排序算法基于图结构这一显式特征进行推理的特点，能够对推理结果形成的原因进行有效反溯，从而一定限度上提高了攻击预测分析结果的可解释性。</p>
+</blockquote>
+<h3 id="Record-v2">Record:</h3>
+<blockquote>
+<p>一是条件假设缺乏有效约束，易导致 0day 攻击的预测结果规模过大，降低了预测的意义；<br>
+二是专家知识构建的攻击模型，易受专家主观知识面的制约；<br>
+三是在已知攻击路径不完整的情况下，预测方法难以适用。</p>
+</blockquote>
+<p>文章为解决上述问题提出基于知识图谱的 0day 攻击路径预测方法，主体在于路径排序算法。预测目标为可能发生的单步攻击，例如 <em>(Firewall_1, 0day-001)</em>，根据资产间的权限关系矩阵，利用所有的单步攻击形成攻击路径。</p>
+<ul>
+<li><em>如何处理未知的0days攻击？</em></li>
+</ul>
+<blockquote>
+<p>选取可用且能满足攻击者对相应设备攻击意图的技术漏洞模拟攻击者掌握的 0day 漏洞。例如，以代码执行漏洞 CVE-2020-14841 模拟 App_Server 的 weblogic_server 组件存在的 0day 漏洞，该漏洞仅需远程访问权限即可触发，获取权限越高，越容易触发，符合 0day 漏洞可用性假设，且执行后能够完成目标设备的控制，从而满足攻击者对 App_Server 的攻击意图。</p>
+</blockquote>
+<p>简单来说就是找一个接近的CVE。</p>
+<p>文章自己搭建实验所需的互联网环境，构建知识图谱，威胁、资产、脆弱性 3 个知识模块分别以信息工程大学 CTF 战队模拟的黑客组织、实验环境设备、不同场景中存在的脆弱性为核心构建相应实体。<br>
+以模拟攻击者的 CTF 战队对不同训练场景下的目标系统的攻击数据为基础，依托知识图谱，以其中被攻击成功的设备为目标实体，计算路径特征，构建攻击正样本，以攻击失败及未被选择为攻击目标的设备为目标实体，构建攻击负样本。</p>
+<h2 id="CyberSecurity-Attack-Prediction-A-Deep-Learning-Approach">CyberSecurity Attack Prediction: A Deep Learning Approach</h2>
+<h3 id="Abstract-v3">Abstract:</h3>
+<blockquote>
+<p>Cybersecurity attacks are exponentially increasing, making existing detection mechanisms insufficient and enhancing the necessity to design more relevant prediction models and approaches. This issue is still an open research problem since existing attack prediction models are failing to follow the huge amount of attacks and their variety. Recently, machine learning approaches and especially deep learning techniques have received much attention from researchers since their unparalleled high performance in several predictionbased fields. In this context, this paper explores the application of deep learning techniques for predicting cybersecurity attacks. Particularly, it proposes a new LSTM (Long Short-Term Memory), RNN (Recurrent Neural Network), and MLP (Multilayer Perceptron) based models carefully designed to predict the type of attack potentially to hap-pen. The proposed models were validated using a recently available dataset called CTF showing encouraging results especially for the LSTM model with an f-measure greater than 93%</p>
+</blockquote>
+<h3 id="Record-v3">Record:</h3>
+<p>基于一个简单的模型架构（LSTM/RNN+Dropout+全连接），作者给出了两种模型：<br>
+  基本模型（Basic Model）的输入仅包含攻击发生时的IP源和IP目的地。<br>
+  回顾模型（Looking Back Model）的输入除了IP源和IP目的地外，还加入了前一次攻击的类型(Attack Type_(t-1))作为额外输入。<br>
+  模型的目标输出都是预测下一个时间点上发生的攻击类型。在实验中，使用了一个包含36种不同攻击类型的分类任务。</p>
+<p>使用了被称为Ctf17数据集，由Defcon提供。Defcon是全球最大的互联网安全社区。Defcon提供了&quot;夺旗&quot; ( Capture the Flag，CtF )大赛，这是一场计算机安全攻防技能的较量。保卫自己的旗帜，同时要想方设法败坏其他球队的旗帜。标志是团队服务器上的数据文件。在博弈过程中，攻击者试图将别人服务器上的旗帜替换为自己的旗帜，而防御者则试图将自己的旗帜保留在自己的服务器上。可以在<a target="_blank" rel="noopener" href="https://www.defcon.org/html/links/dc-ctf.html" title="ctfs">这里</a> 找到历届比赛的内容，ctf17的可下载内容包含两个文件：<em>DEF CON 17 Hacking Conference CTF - BinJitsu - Capture the Flag complete packet capture.rar</em> 和 <em>DEF CON 17 Hacking Conference - CTF Binaries.zip</em></p>
+<img src="/2025/02/04/Research-of-AttackPre/P3-1.png" class="" title="P3-1 alt text">
+<p>将数据集传入Snort分析得到警报，除此之外没有更详细的数据处理过程。等待下载完毕后会进一步完善说明。</p>
+<h2 id="Predictive-Methods-in-Cyber-Defense-Current-Experience-and-Research-Challenges">Predictive Methods in Cyber Defense: Current Experience and Research Challenges</h2>
+<h3 id="Abstract-v4">Abstract:</h3>
+<blockquote>
+<p>Predictive analysis allows next-generation cyber defense that is more proactive than current approaches based on intrusion<br>
+detection. In this paper, we discuss various aspects of predictive methods in cyber defense and illustrate them on three<br>
+examples of recent approaches. The ﬁrst approach uses data mining to extract frequent attack scenarios and uses them to<br>
+project ongoing cyberattacks. The second approach uses a dynamic network entity reputation score to predict malicious<br>
+actors. The third approach uses time series analysis to forecast attack rates in the network. This paper presents a unique<br>
+evaluation of the three distinct methods in a common environment of an intrusion detection alert sharing platform, which<br>
+allows for a comparison of the approaches and illustrates the capabilities of predictive analysis for current and future<br>
+research and cybersecurity operations. Our experiments show that all three methods achieved a suﬃcient technology<br>
+readiness level for experimental deployment in an operational setting with promising accuracy and usability. Namely<br>
+prediction and projection methods, despite their diﬀerences, are highly usable for predictive blacklisting, the ﬁrst provides<br>
+a more detailed output, and the second is more extensible. Network security situation forecasting is lightweight and<br>
+displays very high accuracy, but does not provide details on predicted events.</p>
+</blockquote>
+<h3 id="Record-v4">Record:</h3>
+<p>提出了三种基本方法：</p>
+<ol>
+<li>基于数据挖掘的攻击场景提取（attack projection）：<br>
+该方法通过数据挖掘提取常见的攻击序列，并使用这些序列来预测未来的恶意行为。具体步骤包括数据预处理、输入清洗、警报过滤、警报聚合、数据挖掘、数据库构建和规则匹配（预测）。</li>
+</ol>
+<ul>
+<li>需要的五元组为（源IP，传感器，类别，目的端口，时间戳）</li>
+<li>警报聚合：重复警报的聚合、持续事件的聚合。<br>
+  重复条目，即在发送和共享过程中出现的多份相同警报，可能是由于错误导致的。如果多个警报共享相同的键元素（上述的5元组以及目的IP地址），则只接受其中一个，其余的被忽略。<br>
+  持续事件导致无状态入侵检测系统多次报告同一事件，每次都有不同的时间戳。例如，如果网络扫描需要一个小时，且扫描检测方法基于过去五分钟内数据包数量的阈值，那么检测系统会针对同一事件发出十二个警报，每个警报都有不同的时间戳。在这种情况下，只处理第一个警报，其余的被忽略。如果将所有这些警报都包含在数据挖掘中，会产生描述持续事件的序列，而在这种用例中这些序列是无用的。</li>
+<li>数据挖掘：构建顺序数据库、执行数据挖掘算法。<br>
+  顺序数据库中填充了从警报中得出的具有相同源IP地址的项集序列。项集是从警报中得出的没有源IP地址和时间戳的n元组 <em>(sensor, category, dstport)</em> 。通过共同的源IP地址对项集进行分组，并存储在顺序数据库中。对于在多个警报中出现的每一个唯一IP地址，一系列项集被插入到数据库中，并按时间戳排序。<br>
+  选择了最适合给定用例的Top-K序列规则挖掘方法。该实现使用SPMF库中实现的算法，其中 K=10 。该方法选择从序列数据库中的序列派生的十个最频繁的序列规则。序列规则由两个项目集n元组和相应的支持度（s）和置信度（c）值组成。<br>
+2推1。</li>
+</ul>
+<ol start="2">
+<li>
+<p>动态网络实体评分（attack predication）：<br>
+该方法使用梯度提升决策树（GBDT）模型来估计每个IP地址在未来一段时间内发动攻击的概率。输入特征包括历史警报数据、地理位置信息和公共黑名单信息等。<br>
+它不预测即将发生的确切攻击；相反，它估计每个IP地址（或者可能是另一种类型的网络标识符，一个实体）在近期时间窗口（例如，接下来的24小时）内发起攻击的概率。<br>
+目标是估计每个来源（IP地址）在未来24小时内观察到特定类型警报的概率。</p>
+</li>
+<li>
+<p>基于时间序列分析的网络攻击率预测（Network security situation forecasting）：<br>
+该方法使用时间序列分析方法来预测未来一段时间内的安全警报数量。使用了多种时间序列预测模型，包括ARIMA模型、指数平滑模型（状态空间模型）、朴素方法和它们的组合。</p>
+</li>
+</ol>
+<p>实验在一个共同的入侵检测警报共享平台SABU上进行，该平台由捷克国家研究和教育网络（NREN）运营。使用SABU平台从2019年3月11日至3月17日收集的一周内的入侵检测警报数据。数据来自34个入侵检测系统、蜜罐和其他数据源。</p>
+<h2 id="Predictive-Cyber-Situational-Awareness-and-Personalized-Blacklisting-A-Sequential-Rule-Mining-Approach">Predictive Cyber Situational Awareness and Personalized Blacklisting: A Sequential Rule Mining Approach</h2>
+<h3 id="Abstract-v5">Abstract:</h3>
+<blockquote>
+<p>Cybersecurity adopts data mining for its ability to extract concealed and indistinct patterns in the data, such<br>
+as for the needs of alert correlation. Inferring common attack patterns and rules from the alerts helps in under-<br>
+standing the threat landscape for the defenders and allows for the realization of cyber situational awareness,<br>
+including the projection of ongoing attacks. In this article, we explore the use of data mining, namely se-<br>
+quential rule mining, in the analysis of intrusion detection alerts. We employed a dataset of 12 million alerts<br>
+from 34 intrusion detection systems in 3 organizations gathered in an alert sharing platform, and processed<br>
+it using our analytical framework. We execute the mining of sequential rules that we use to predict security<br>
+events, which we utilize to create a predictive blacklist. Thus, the recipients of the data from the sharing<br>
+platform will receive only a small number of alerts of events that are likely to occur instead of a large number<br>
+of alerts of past events. The predictive blacklist has the size of only 3% of the raw data, and more than 60% of<br>
+its entries are shown to be successful in performing accurate predictions in operational, real-world settings.</p>
+</blockquote>
+<h3 id="Record-v5">Record:</h3>
+<p>主要是记录一下一个很重要的表格：</p>
+<blockquote>
+<p>预测网络攻击是一个新兴的研究主题，通常以警报关联为基础。在此，我们总结了使用数据挖掘产生输出（如攻击模型和预测规则）的工作，这些输出可用于进行预测。Li等人和Lei等人。</p>
+</blockquote>
+  
+<p>该表单统计了两种预测任务，分别是攻击预测和黑名单；黑名单旨在创建可能会表现出恶意行为的网络实体列表作为黑名单（例如IP地址和主机名）。</p>
+<p>用的数据生成方案同<a href="#Predictive-Methods-in-Cyber-Defense-Current-Experience-and-Research-Challenges">Predictive Methods in Cyber Defense: Current Experience and Research Challenges</a></p>
+<h2 id="ProAPT-Projection-of-APT-Threats-with-Deep-Reinforcement-Learning">ProAPT: Projection of APT Threats with Deep Reinforcement Learning</h2>
+<h3 id="Abstract-v6">Abstract:</h3>
+<h3 id="Record-v6">Record:</h3>
+<h1>Summary:</h1>
+<p>感觉不能只记录看了什么，有时候需要总结一下每天的想法，不然过段时间就忘了。这里按时间来对我的想法进行一个排序。</p>
+<h3 id="未记录时间">未记录时间</h3>
+<p>两个图：溯源图和攻击图，溯源图主要针对入侵检测任务，攻击图主要针对攻击预测任务。</p>
+<h3 id="250210">250210</h3>
+<p>需要说明的是，网络空间安全攻击预测实际上包含了太多的相关任务，现在已经确定的是，黑名单（以关联规则为主）、攻击数量（以时间序列为主）相关的预测任务不是我需要的；相关的工作可以不用看了。</p>
+<h1>Reference</h1>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2025/02/04/Research-of-AttackPre/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/04/Research-of-AttackPre/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

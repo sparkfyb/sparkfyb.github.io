@@ -140,24 +140,91 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Hello World</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >How to use your Markdown</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h1>Abstract</h1>
+<p>  如你所见，这是一个markdown的教程。对我而言，markdown在本科四年期间就已经用过很多了。但是我从未正式地进行过整理，大多数时候都是用的时候现查。我决定写一篇markdown的教程，以供自己日后查阅；说是教程，实际上没有教的部分，若有需求请直接查阅本人的github主页参考。<br>
+    PS：本文的题目参考了知名动画电影驯龙高手：How to Train Your Dragon。</p>
+<h1>Content (H1)</h1>
+<p>Markdown 目录：<br>
+[TOC]</p>
+<p>Markdown 标题：</p>
+<h2 id="这是-H2">这是 H2</h2>
+<h3 id="这是-H3">这是 H3</h3>
+<p>Markdown 列表：</p>
+<ul>
+<li>列表项目</li>
+</ul>
+<ol>
+<li>列表项目</li>
+</ol>
+<p><em>斜体</em>或_斜体_<br>
+<strong>粗体</strong><br>
+<em><strong>加粗斜体</strong></em><br>
+<s>删除线</s></p>
+<p>Markdown 插入链接：<br>
+<a href="%E9%93%BE%E6%8E%A5%E7%BD%91%E5%9D%80" title="标题">链接文字</a></p>
+<p>Markdown 插入图片：<br>
+<img src="/path/to/img.jpg" alt="alt text" title="Title"></p>
+<p>Markdown 插入代码块：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>Markdown 引用：</p>
+<blockquote>
+<p>引用内容</p>
+</blockquote>
+<h2 id="Markdown-分割线：">Markdown 分割线：</h2>
+<p>Markdown 换行：<br>
+<br></p>
+<p>Markdown 段首缩进：<br>
+  or   表示一个半角的空格<br>
+  or    表示一个全角的空格<br>
+   两个全角的空格（用的比较多）<br>
+  or   不断行的空白格</p>
+<p>Markdown 表格：</p>
+<table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+<tr>
+<td>单元格</td>
+<td>单元格</td>
+</tr>
+</tbody>
+</table>
+<p>Markdown 代码高亮：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 代码高亮</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello, World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Markdown 脚注：<br>
+脚注<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<p>Markdown 数学公式：<br>
+$$<br>
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}<br>
+$$</p>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#%E6%A0%87%E9%A2%98-1">标题1</a></li>
+</ol>
+<p>…<br>
+…</p>
+<h3 id="标题-1">标题: 1</h3>
+<h1>Reference</h1>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ArthurCaoMH/article/details/89300713">https://blog.csdn.net/ArthurCaoMH/article/details/89300713</a></p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>脚注内容 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
 
             </div>
 
@@ -220,8 +287,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://example.com/2025/02/03/hello-world/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2025/02/03/hello-world/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://example.com/2025/02/03/How%20to%20use%20your%20Markdown/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/03/How%20to%20use%20your%20Markdown/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
