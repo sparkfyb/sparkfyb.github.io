@@ -284,9 +284,9 @@ in Wireless Sensor Network<br>
 序列模式挖掘：<br>
 网络攻击图：<br>
  Attack scenario reconstruction approach using attack graph and alert data mining<br>
- Multi-step Attack Scenarios Mining Based on Neural Network and Bayesian Network Attack Graph</p>
+ Multi-step Attack Scenarios Mining Based on Neural Network and Bayesian Network Attack Graph<br>
+计划库：</p>
 </blockquote>
-<p>计划库：</p>
 <p>目前看下来，比较有效和接近设想的可能是深度学习、贝叶斯网络、网络攻击图三种方法。</p>
 <ol>
 <li>有关告警：</li>
@@ -316,7 +316,7 @@ in Wireless Sensor Network<br>
 </ul>
 </li>
 <li>严重性/优先级排序：</li>
-<li>攻击预测：事实上已经在’‘有关预测’'部分说过了。<s>（突然感觉被欺骗了）</s></li>
+<li>攻击预测：事实上已经在’‘有关预测’'部分说过了。</li>
 <li>数据集：</li>
 </ul>
 <img src="/2025/02/04/Research-of-AttackPre/P1-4.png" class="" title="P1-4 alt title">
@@ -339,7 +339,7 @@ in Wireless Sensor Network<br>
 <p>文章为解决上述问题提出基于知识图谱的 0day 攻击路径预测方法，主体在于路径排序算法。<br>
 输入为网络防御知识图谱；关系路径集；<br>
 攻击样本集（历史攻击数据，用于训练分类器LCA，用以预测攻击是否会发生）；0day攻击样本集（特定于0day攻击的数据样本，用于训练分类器LCZ，区分已知攻击和0day攻击）。<br>
-预测目标为可能发生的单步攻击，例如 *(Firewall_1, 0day-001)*发生的可能性，然后根据资产间的权限关系矩阵，利用所有的单步攻击形成攻击路径。</p>
+预测目标为可能发生的单步攻击，例如 <em>(Firewall_1, 0day-001)</em> 发生的可能性，然后根据资产间的权限关系矩阵，利用所有的单步攻击形成攻击路径。</p>
 <img src="/2025/02/04/Research-of-AttackPre/P2-1.png" class="" title="P2-1 alt text">
 <ul>
 <li><em>如何处理未知的0days攻击？</em></li>
@@ -435,15 +435,52 @@ its entries are shown to be successful in performing accurate predictions in ope
 <h3 id="Abstract-v6">Abstract:</h3>
 <h3 id="Record-v6">Record:</h3>
 <h1>Summary:</h1>
-<p>感觉不能只记录看了什么，有时候需要总结一下每天的想法，不然过段时间就忘了。这里按时间来对我的想法进行一个排序。</p>
-<h3 id="未记录时间">未记录时间</h3>
-<p>两个图：溯源图和攻击图，溯源图主要针对入侵检测任务，攻击图主要针对攻击预测任务。<br>
-阅读书籍《网络空间安全防御与态势感知》第11章攻击预测：</p>
+<p>不能只记录看了什么，有时候需要总结一下每天的想法，不然过段时间就忘了。这里按时间来对我的想法进行一个排序。</p>
+<h3 id="未记录时间（包含了一本专业书籍的阅读记录）">未记录时间（包含了一本专业书籍的阅读记录）</h3>
+<p>分清楚两个图：溯源图和攻击图，</p>
 <ul>
-<li>书中将</li>
+<li>溯源图主要针对入侵检测任务，攻击图主要针对攻击预测任务。</li>
+<li>溯源图通过有向图表示实体间的控制流和数据流，节点为系统实体（进程、文件等），边为操作事件（带时间戳和操作类型），节点通常表示系统状态（如主机、漏洞），边表示攻击步骤（如漏洞利用、权限提升）。</li>
+<li>假设一个场景：某公司内部服务器遭到勒索软件攻击，攻击者通过钓鱼邮件植入恶意程序，横向移动到数据库服务器，最终加密核心数据。安全团队需分析攻击路径并制定防御措施。<br>
+溯源图的目标：追溯攻击发生的实际路径，确定攻击源头和影响范围。可能的数据来源：服务器和终端主机的审计日志（如进程创建、文件修改、网络连接记录）。<br>
+攻击图的目标：在攻击发生前，预测可能的攻击路径并修复漏洞。可能是数据来源：漏洞数据库（CVE）、网络拓扑、主机权限配置。</li>
 </ul>
+<p>阅读书籍 <em>《网络空间安全防御与态势感知》</em> 第11章攻击预测，该书的作者将攻击预测分为以下三部分：</p>
+<ul>
+<li>
+<p>基于攻击图和攻击计划：<br>
+攻击图实际上是从告警关联扩展而来，延申出了 <em>攻击图</em> 和 <em>（动态）贝叶斯网络</em> 比较有代表性的作品都是相对早期的：<br>
+攻击图：Using attack graphs for correlating, hypothesizing, and predicting intrusion alerts (2006)<br>
+贝叶斯网络：Attack plan recognition and prediction using causal networks (2004)</p>
+<blockquote>
+<p>攻击图更多是基于规则的，而动态贝叶斯网络方法则更多基于概率并且是数据驱动的。因为攻击图是基于规则的，所以它能够对网络中的漏洞和攻击利用行为进行具体的建模和分析。另一方面，使用动态贝叶斯网络来对高阶攻击计划进行建模，则需要将具体告警映射至攻击类别，而且能够进行概率推导，并且有助于将所有可能的未来攻击动作缩减为一个未来可能发生的攻击的可分辨列表。</p>
+</blockquote>
+<p>但这两个方法实在是太久远了，以至于我到现在（250210）还没有看。</p>
+</li>
+<li>
+<p>通过预估攻击者能力、机会和意图：</p>
+<blockquote>
+<p>在威胁预测中对网络配置和漏洞信息的应用，也可以推广至对攻击者能力、机会和意图(COI)进行预估的概念上。</p>
+</blockquote>
+<p>在这一节里，作者对COI给出了定义，其中能力、机会我认为可以作为外部知识进行加入（如ATTCK数据库的TTP可以看作能力、CWE可以看作机会），而意图则需要特定的攻击场景，即具体的数据进行拟合/推理。<br>
+Characterizing Transition Behaviors in Internet Attack Sequences (2011)<br>
+该方法使用TBM模型将能力评估和机会评估合并在一起整合预测。</p>
+</li>
+<li>
+<p>通过学习攻击行为 / 模式：<br>
+这一部分偏向于较少的先验知识，比如一些已知攻击的变种，或者一些未知攻击。由于缺乏对攻击策略和漏洞的了解，必须从数据中学习可能存在的行为/模式。<br>
+Projecting Cyberattacks Through Variable-Length Markov Models (2008)<br>
+Nexat: a history-based approach to predict attacker actions (2011) 使用了2008年iCTF数据集（网络上没有，usbc高校内部的文件）<br>
+Blacklisting Recommendation System: Using Spatio-Temporal Patterns to Predict Future Attacks<br>
+(2011) 使用了DSheild数据集<br>
+A Novel Probabilistic Matching Algorithm for Multi-Stage Attack Forecasts (2011) 使用了DARPA数据集</p>
+</li>
+</ul>
+<p>问题是，这些数据集都被认为是入侵检测数据集，他们是如何用来完成攻击预测任务的？</p>
+<p>其他需要说明的是，该书于2018年首次出版，也就是说已经是7年前的总结了，对于回顾历史和总体的研究是有益的，但是对于掌握最新的研究，可能需要一些近期的论文。</p>
+<h3 id="250209">250209</h3>
 <h3 id="250210">250210</h3>
-<p>需要说明的是，网络空间安全攻击预测实际上包含了太多的相关任务，现在已经确定的是，黑名单（以关联规则为主）、攻击数量（以时间序列为主）相关的预测任务不是我需要的；相关的工作可以不用看了。</p>
+<p>网络空间安全攻击预测实际上包含了太多的相关任务，现在已经确定的是，黑名单（以关联规则为主）、攻击数量（以时间序列为主）相关的预测任务不是我需要的；相关的工作可以不用看了。</p>
 <h1>Reference</h1>
 
             </div>
