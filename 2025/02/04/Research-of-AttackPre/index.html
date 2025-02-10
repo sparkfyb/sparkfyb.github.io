@@ -219,7 +219,7 @@
 <blockquote>
 <p>NIDS technology plays an essential role in protecting communication networks from cybercrime. However, these technologies are not viable in predicting future attacks. It produces much of alerts when attack activities/intrusions have effectively occurred. A proactive approach is to predict and lead conceivable attacks to prevent damage. However, network intrusion prediction is still an active investigation.</p>
 </blockquote>
-<p>大意是检测不行了，预测更牛，但是也更难；那么预测到底有哪些方法？请看：</p>
+<p>大意是检测不行了，预测更牛，但是也更难；那么预测到底有哪些方法？</p>
 <img src="/2025/02/04/Research-of-AttackPre/P1-2.png" class="" title="P1-2">  
 <p>简单汉化一下：</p>
 <table>
@@ -275,13 +275,19 @@
  GRU-based deep learning approach for network intrusion alert prediction<br>
  Network entity characterization and attack prediction<br>
 贝叶斯网络：<br>
+ A Model-Based System for Intrusion Detection Using Novel Technique-Hidden Markov Bayesian<br>
+in Wireless Sensor Network<br>
+ A Bayesian network-based approach for learning attack strategies from intrusion alerts<br>
+ Multi-step Attack Scenarios Mining Based on Neural Network and Bayesian Network Attack Graph<br>
 关系时间序列：<br>
 机器学习和数据挖掘：<br>
 序列模式挖掘：<br>
 网络攻击图：<br>
-计划库：</p>
+ Attack scenario reconstruction approach using attack graph and alert data mining<br>
+ Multi-step Attack Scenarios Mining Based on Neural Network and Bayesian Network Attack Graph</p>
 </blockquote>
-<p>懒得写了，现在应该都比较关注深度学习的方法吧。</p>
+<p>计划库：</p>
+<p>目前看下来，比较有效和接近设想的可能是深度学习、贝叶斯网络、网络攻击图三种方法。</p>
 <ol>
 <li>有关告警：</li>
 </ol>
@@ -330,7 +336,11 @@
 二是专家知识构建的攻击模型，易受专家主观知识面的制约；<br>
 三是在已知攻击路径不完整的情况下，预测方法难以适用。</p>
 </blockquote>
-<p>文章为解决上述问题提出基于知识图谱的 0day 攻击路径预测方法，主体在于路径排序算法。预测目标为可能发生的单步攻击，例如 <em>(Firewall_1, 0day-001)</em>，根据资产间的权限关系矩阵，利用所有的单步攻击形成攻击路径。</p>
+<p>文章为解决上述问题提出基于知识图谱的 0day 攻击路径预测方法，主体在于路径排序算法。<br>
+输入为网络防御知识图谱；关系路径集；<br>
+攻击样本集（历史攻击数据，用于训练分类器LCA，用以预测攻击是否会发生）；0day攻击样本集（特定于0day攻击的数据样本，用于训练分类器LCZ，区分已知攻击和0day攻击）。<br>
+预测目标为可能发生的单步攻击，例如 *(Firewall_1, 0day-001)*发生的可能性，然后根据资产间的权限关系矩阵，利用所有的单步攻击形成攻击路径。</p>
+
 <ul>
 <li><em>如何处理未知的0days攻击？</em></li>
 </ul>
