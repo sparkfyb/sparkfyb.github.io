@@ -222,7 +222,7 @@
 <td style="text-align:center">Computer Science Department, Huazhong University of Science and Technology</td>
 <td style="text-align:center">2007</td>
 <td style="text-align:center">International Conference on Fuzzy Systems and Knowledge Discovery (FSKD)</td>
-<td style="text-align:center">\</td>
+<td style="text-align:center">DARPA2000</td>
 <td style="text-align:center">关联规则，攻击图生成</td>
 </tr>
 </tbody>
@@ -532,26 +532,25 @@ is no previous research on using reinforcement learning for APT projection, our 
 </blockquote>
 <p>最重要的地方在于，文章对几种攻击预测的方法做了详细的统计：</p>
 <ul>
-<li>图模型（离散模型）的方法，如攻击图、贝叶斯网络和马尔可夫模型。另一种替代方法是基于博弈论：<br>
-<img src="Research-of-AttackPre%5CP7-1.png" alt="alt text" title="P7-1"></li>
-<li>连续模型，如时间序列和灰色模型。这些方法在大多数情况下适用于网络安全状况的预测。常见的结果包括网络受到的攻击数量、攻击量和组成以及它们在时间上的分布。或者，可以使用时间序列中的时间模式来预测网络攻击：<br>
-<img src="Research-of-AttackPre%5CP7-2.png" alt="alt text" title="P7-2"></li>
-<li>通常，数据挖掘被用于创建用于攻击预测的模型，例如，攻击图和马尔可夫模型。在此背景下使用数据挖掘的目的是为了克服基于模型的攻击预测模型的一个主要缺点，即依赖于安全专家提供的模型，并不直接影响方法本身。<br>
-<img src="Research-of-AttackPre%5CP7-3.png" alt="alt text" title="P7-3"></li>
-<li>其他<br>
-<img src="Research-of-AttackPre%5CP7-4.png" alt="alt text" title="P7-4"></li>
+<li>图模型（离散模型）的方法，如攻击图、贝叶斯网络和马尔可夫模型。另一种替代方法是基于博弈论：<img src="/2025/02/04/Research-of-AttackPre/P7-1.png" class="" title="P7-1 alt text">
+</li>
+<li>连续模型，如时间序列和灰色模型。这些方法在大多数情况下适用于网络安全状况的预测。常见的结果包括网络受到的攻击数量、攻击量和组成以及它们在时间上的分布。或者，可以使用时间序列中的时间模式来预测网络攻击：<img src="/2025/02/04/Research-of-AttackPre/P7-2.png" class="" title="P7-2 alt text">
+</li>
+<li>通常，数据挖掘被用于创建用于攻击预测的模型，例如，攻击图和马尔可夫模型。在此背景下使用数据挖掘的目的是为了克服基于模型的攻击预测模型的一个主要缺点，即依赖于安全专家提供的模型，并不直接影响方法本身。<img src="/2025/02/04/Research-of-AttackPre/P7-3.png" class="" title="P7-3 alt text">
+</li>
+<li>其他<img src="/2025/02/04/Research-of-AttackPre/P7-4.png" class="" title="P7-4 alt text">  
+</li>
 </ul>
 <p>文章为表格中的所有工作都撰写了简单的总结，其中部分工作具有参考意义，集中在离散模型部分：</p>
 <ul>
 <li>攻击图：攻击图（通常简称为AG）是一个元组 $G=(S, r, S_0, S_s)$，其中S是一组状态，$r⊆S×S$ 是一个转移关系（带概率），$S_0$是一个初始状态的集合，$S_s$是一个成功状态的集合。状态代表攻击开始前的状态，关系代表攻击者的可能行动。（有点像博弈论的决策树过程）<br>
-下图描述了一系列的攻击步骤，从ICMP PING开始进行目标探测，到尝试通过Telnet获取信息、利用RPC服务中的漏洞尝试获取root权限等，直至最终可能的攻击响应和进一步的恶意行为。<br>
-<img src="Research-of-AttackPre%5CP7-5.png" alt="alt text" title="P7-5"><br>
+下图描述了一系列的攻击步骤，从ICMP PING开始进行目标探测，到尝试通过Telnet获取信息、利用RPC服务中的漏洞尝试获取root权限等，直至最终可能的攻击响应和进一步的恶意行为。<img src="/2025/02/04/Research-of-AttackPre/P7-5.png" class="" title="P7-5 alt text">
 状态如何定义？<br>
 怎么构建？（详情见论文 <em>A data mining approach to generating network attack graph for intrusion prediction</em>）<br>
 怎么预测？</li>
 <li>贝叶斯网络：这些方法与基于攻击图的模型检验方法密切相关，因为贝叶斯网络通常是从攻击图中构建的。（对事件因果性的要求导致使用因果网络而不是通用的贝叶斯网络），<br>
-下图模拟了一个攻击者（D）的活动，该攻击者可能会使用缓冲区溢出漏洞利用（B、C）之一来获取对服务器（A）的访问权限。概率表附加在每个节点上，告知我们有关攻击者可能使用的漏洞利用的概率，以及成功利用的概率。<br>
-<img src="Research-of-AttackPre%5CP7-6.png" alt="alt text" title="P7-6"></li>
+下图模拟了一个攻击者（D）的活动，该攻击者可能会使用缓冲区溢出漏洞利用（B、C）之一来获取对服务器（A）的访问权限。概率表附加在每个节点上，告知我们有关攻击者可能使用的漏洞利用的概率，以及成功利用的概率。<img src="/2025/02/04/Research-of-AttackPre/P7-6.png" class="" title="P7-6 alt text">
+</li>
 <li>马尔可夫模型：</li>
 </ul>
 <h2 id="A-Data-Mining-Approach-to-Generating-Network-Attack-Graph-for-Intrusion-Prediction">A Data Mining Approach to Generating Network Attack Graph for Intrusion Prediction</h2>
