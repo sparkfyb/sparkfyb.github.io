@@ -225,6 +225,14 @@
 <td style="text-align:center">DARPA2000</td>
 <td style="text-align:center">关联规则，攻击图生成</td>
 </tr>
+<tr>
+<td style="text-align:center"><a href="#Using-Attack-Graphs-for-Correlating-Hypothesizing-and-Predicting-Intrusion-Alerts">Using Attack Graphs for Correlating, Hypothesizing, and Predicting Intrusion Alerts</a></td>
+<td style="text-align:center">Center for Secure Information Systems, George Mason University, Fairfax</td>
+<td style="text-align:center">2006</td>
+<td style="text-align:center">Computer Communications</td>
+<td style="text-align:center">DARPA2000</td>
+<td style="text-align:center">攻击图生成</td>
+</tr>
 </tbody>
 </table>
 <h1>Content</h1>
@@ -560,6 +568,24 @@ is no previous research on using reinforcement learning for APT projection, our 
 </blockquote>
 <h3 id="Record-v8">Record:</h3>
 <p>关联规则的方法，$[x,y] \rightarrow z$，由历史入侵检测系统（IDS）警报构成的数据集，在处理之前需要经过一些预处理功能，比如提高数据集质量的警报聚合和警报验证，映射警报属性以便于计算，以及使用滑动攻击序列时间窗口划分全局警报序列。统计每一种攻击序列出现的频数，按支持度大小赋予状态间的转移概率。</p>
+<h2 id="Using-Attack-Graphs-for-Correlating-Hypothesizing-and-Predicting-Intrusion-Alerts">Using Attack Graphs for Correlating, Hypothesizing, and Predicting Intrusion Alerts</h2>
+<h3 id="Abstract-v9">Abstract:</h3>
+<blockquote>
+<p>To defend against multi-step intrusions in high-speed networks, efficient algorithms are needed to correlate isolated alerts into attack scenarios. Existing correlation methods usually employ an in-memory index for fast searches among received alerts. With finite memory, the index can only be built on a limited number of alerts inside a sliding window. Knowing this fact, an attacker can prevent two attack steps from both falling into the sliding window by either passively delaying the second step or actively injecting bogus alerts between the two steps. In either case, the correlation effort is defeated. In this paper, we first address the above issue with a novel queue graph (QG) approach. Instead of searching all the received alerts for those that prepare for a new alert, we only search for the latest alert of each type. The correlation between the new alert and other alerts is implicitly represented using the temporal order between alerts. Consequently, our approach can correlate alerts that are arbitrarily far away, and it has a linear (in the number of alert types) time complexity and quadratic memory requirement. Then, we extend the basic QG approach to a unified method to hypothesize missing alerts and to predict future alerts. Finally, we propose a compact representation for the result of alert correlation. Empirical results show that our method can fulfill correlation tasks faster than an IDS can report alerts. Hence, the method is a promising solution for administrators to monitor and predict the progress of intrusions and thus to take appropriate countermeasures in a timely manner.</p>
+</blockquote>
+<h3 id="Record-v9">Record:</h3>
+<p>攻击图的开山论文。<br>
+最初攻击图的设想来自告警关联——警报可以根据相似属性（例如，相同的目的主机）以及关于警报类型或相应漏洞的先验知识进行关联。<br>
+提出了一种新颖的队列图方法、一种统一的入侵警报关联、假设和预测方法。</p>
+<ul>
+<li>攻击图：攻击图代表了对给定网络的先验知识，以漏洞和连通性为基础。攻击图是一种有向图，两种顶点：利用、安全条件。利用是指绑定于主机的漏洞，被表示为一个三元组（漏洞，源主机，目标主机），表明漏洞存在于目标主机上，并且源主机和目标主机是连接的（源主机和目标主机可能在本地利用中指的是同一台主机）。安全条件是指利用漏洞所需或暗示的网络状态，如权限级别或信任。两种有向边：安全条件-&gt;利用漏洞，表示只有当满足安全条件时才能执行该利用；利用漏洞-&gt;安全条件，表示执行该利用将满足安全条件。示例如下（椭圆为安全条件、矩形为利用）：<img src="/2025/02/04/Research-of-AttackPre/P8-1.png" class="" title="P8-1 alt text">  
+只有在攻击者能够访问源主机host1且目标主机host2存在易受攻击的服务时，缓冲区溢出利用才能执行</li>
+<li>入侵警报：由给定网络中的IDS传感器报告的入侵警报通常包含事件类型、源主机和目的主机的地址、时间戳等属性（RPC端口映射sadmind请求UDP，202.77.162.213，172.16.115.20，03/07-08:50:04.74612）。</li>
+</ul>
+<p>现在说明了原始数据结构和攻击图，暂且跳过具体的队列图关联过程，只看在攻击预测的应用：<br>
+通过向后搜索（即，沿着攻击图中边的相反方向）来查找相关（或假设）的警报，可以解释新警报的出现（溯源图？）。通过向前搜索来预测每个新警报的可能后果。在这种情况下使用BFS，预测出的安全条件将按照它们到新警报的（最短）距离顺序被发现。这个距离大致表明了基于迄今为止收到的警报，预测攻击的紧迫程度。（实际上是预测下一步攻击的结果，或者安全条件映射到攻击？）<br>
+很明显的，这种方法无法预测未知攻击。当观测到某一步告警（即攻击图中的利用）出现，在已有构建好的攻击图基础上，查看该利用的后续安全条件（即攻击图中的安全条件）以得到可能的攻击。与CyberSecurity Attack Prediction: A Deep Learning Approach方法不同，现实世界不可能得到完整的攻击图——攻击一直在变化，最多给出1、已知攻击的先验（MITRE）2、已经检测到了发生的攻击。3、系统日志（告警）4、系统的物理环境组成。</p>
+<p>实验部分，使用了两个数据集进行实验，一个是麻省理工学院林肯实验室的DARPA2000入侵检测LLDOS 1.0，另一个是University of California, Santa Barbara的寻宝活动数据集（互联网好像已经找不到了，也没看到有人用）。Darpa 2000数据集中的攻击场景之前已经被广泛探索过（见Constructing attack scenarios through correlation of intrusion alerts）。</p>
 <h1>Summary:</h1>
 <p>不能只记录看了什么，有时候需要总结一下每天的想法，不然过段时间就忘了。这里按时间来对我的想法进行一个排序。</p>
 <h3 id="未记录时间（包含了一本专业书籍的阅读记录）">未记录时间（包含了一本专业书籍的阅读记录）</h3>
