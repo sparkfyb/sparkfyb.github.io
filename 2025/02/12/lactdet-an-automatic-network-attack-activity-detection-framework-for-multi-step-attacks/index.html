@@ -140,59 +140,80 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Research of AttackDetect</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >LActDet: An Automatic Network Attack Activity Detection Framework for Multi-step Attacks</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1>Abstract:</h1>
-<p>题目叫AttackDetect而不是IntrusionDetect，是想和传统的入侵检测作一个区分，这些工作除了判断出系统内出现攻击之外，往往还能给出攻击已经到达的阶段（或者其他更复杂的信息）。<br>
-除此之外，关注一些大模型的方法，无论是否能够直接用于检测，最好是一些比较有想象力的工作。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">题目</th>
-<th style="text-align:center">单位</th>
-<th style="text-align:center">年份</th>
-<th style="text-align:center">来源</th>
-<th style="text-align:center">数据集</th>
-<th style="text-align:center">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="#huntgpt-integrating-machine-learning-based-anomaly-detection-and-explainable-ai-with-large-language-models-llms">HuntGPT: Integrating Machine Learning-Based Anomaly Detection and Explainable AI with Large Language Models (LLMs)</a></td>
-<td style="text-align:center">University of Oulu, Faculty of Information Technology and Electrical Engineering Center for Ubiquitous Computing, Oulu, Finland</td>
-<td style="text-align:center">2023</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="#lactdet-an-automatic-network-attack-activity-detection-framework-for-multi-step-attacks">LActDet: An Automatic Network Attack Activity Detection Framework for Multi-step Attacks</a></td>
-<td style="text-align:center">Institute of Information Engineering, Chinese Academy of Sciences</td>
-<td style="text-align:center">2023</td>
-<td style="text-align:center">2023 IEEE 22nd International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom)</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<h1>Content:</h1>
-<h2 id="HuntGPT-Integrating-Machine-Learning-Based-Anomaly-Detection-and-Explainable-AI-with-Large-Language-Models-LLMs">HuntGPT: Integrating Machine Learning-Based Anomaly Detection and Explainable AI with Large Language Models (LLMs)</h2>
-<p><em>Year: 2023, Author: University of Oulu, Faculty of Information Technology and Electrical Engineering Center for Ubiquitous Computing, Oulu, Finland</em></p>
-<h3 id="Abstract">Abstract:</h3>
-<h3 id="Record">Record:</h3>
-<p>以易于理解的格式提供威胁检测结果。</p>
-<h2 id="LActDet-An-Automatic-Network-Attack-Activity-Detection-Framework-for-Multi-step-Attacks">LActDet: An Automatic Network Attack Activity Detection Framework for Multi-step Attacks</h2>
-<h3 id="Abstract-v2">Abstract:</h3>
+                <h1>LActDet: An Automatic Network Attack Activity Detection Framework for Multi-step Attacks</h1>
+<p>警报数据-&gt;</p>
+<h2 id="Abstract">Abstract:</h2>
 <blockquote>
 <p>With the evolution of attack tactics, cyber-attacks are presenting a sophisticated trend. The multi-step attack has become the mainstream attack form, where adversaries implement multiple attack steps to achieve their goals, which poses server challenges to attack detection. Traditional research mainly concentrates on how a particular attack step is exploited but fails to identify the whole attack activity automatically. Manual analysis is required to correlate multiple steps and determine the fine-grained type of attack activities, which is a heavy workload. In addition, the high error rate of alerts results in a negative impact on attack-activity detection performance.<br>
 To address these challenges, we propose a framework, LActDet, to automatically identify attack activities from the raw alerts end-to-end. Firstly, it utilizes a document-embedding method to vectorize attack-event descriptions. Second, a seq2seq model is implemented to embed the attack-event sequence into the attack-phase sequence to represent the framework of attack activity, aiming at improving the fault tolerance for error alerts. In the end, we propose a temporal-sequence-based classifier to identify attack activities. Our experimental results demonstrate that LActDet achieves higher detection accuracy, lower artificial dependence, and less system overhead.</p>
 </blockquote>
-<h3 id="Record-v2">Record:</h3>
-<p>告警数据-&gt;活动分类，详情见博客内独立文章。</p>
-<h2 id="Reference">Reference:</h2>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Eastmount/article/details/120555733">https://blog.csdn.net/Eastmount/article/details/120555733</a></p>
+<h2 id="Record">Record:</h2>
+<h3 id="背景：">背景：</h3>
+<blockquote>
+<p>对手通常实施多个步骤来实现其目标，每个攻击步骤与相邻步骤高度相关，称为多步攻击。一系列相关的攻击步骤构成了攻击活动。每个原子攻击步骤，如“对192.168.1.2执行ICMP Ping”，都会触发一个警报。多个高度相关的警报形成一个事件。分析人员基于事件序列分析攻击活动的类型，并确定防御策略。著名的攻击活动“想哭勒索软件”就是一个典型的多步攻击。其攻击过程包括侦察、执行、权限提升和横向移动。</p>
+</blockquote>
+<p>总的来说对应关系为：原子攻击步骤-1:1-&gt;警报-n:1-&gt;事件-n:1-&gt;（攻击阶段）-&gt;攻击活动类型</p>
+<blockquote>
+<p>仅关注单一攻击行为无法应对日益复杂的攻击活动。一些研究人员致力于从系统角度进行多步骤攻击检测。研究可分为两大类：<br>
+1）攻击事件（Attack event）检测。关注攻击事件而非原始警报，这在一定程度上提高了检测自动化水平。但是1、攻击事件验证和相关性分析等没有足够的研究。2、这些研究较为粗略。例如，它们仅通知分析师发生了蠕虫攻击，但未能准确识别具体的蠕虫病毒。<br>
+2）攻击活动（Attack activity）检测。现有的工作有：基于系统日志识别攻击活动；通过关联相关警报来重建攻击场景，以揭示潜在的攻击路径。但是1、仍需手动分析以验证和识别攻击活动。2、误报率使得攻击场景重建的性能受限，导致在确定攻击活动时出现偏差。</p>
+</blockquote>
+<p>名词解释：</p>
+<blockquote>
+<p>● 警报：警报表示由终端安全设备（如入侵检测系统、防火墙等）生成的潜在和原子攻击步骤。每个警报包含多个攻击动作的重要属性，例如源地址和目的地址及其类别。<br>
+● 攻击事件：一个或多个冗余警报代表一次攻击事件。<br>
+● 攻击阶段：对手通常以计划的方式执行攻击步骤。每个步骤都有一个分阶段的目标，称为“攻击阶段”。一个攻击阶段序列包含几个事件，它们具有相同的目的。<br>
+● 攻击活动：攻击活动包括针对对手目标的所有攻击过程。多步攻击活动可能由几个相关的攻击阶段组成。</p>
+</blockquote>
+<p>在ATTCK数据库里，攻击阶段作为最上层的概念（阶段-战术-技术），而这篇文章定义的下层概念是事件，事件如何对应？</p>
+<p>多阶段示例：</p>
+<blockquote>
+<p>我们以从DARPA2000中提取的多步分布式拒绝服务（DDoS）攻击为例，来说明上述概念、警报、攻击事件、攻击阶段和攻击活动之间的关系。对手202.77.162.213作为受控僵尸网络渗透了172.16.112.10、172.16.112.50和172.16.115.20，并针对131.84.1.31发起了DDoS攻击。攻击过程可以概括为六个步骤：<br>
+1）探索目标网络段的活跃IP地址（每个受害主机都会触发大量警报，“协议-ICMP回显请求”）。<br>
+2）确定每个活跃主机上是否运行Sadmind守护进程（警报：“Sadmind UDP回显请求”）。<br>
+3）通过Sadmind漏洞入侵目标主机（会触发四个警报：“管理员端口查询请求尝试”、“溢出尝试”、“根凭据UDP尝试”和“远程Telnet”）。<br>
+4）恶意文件下载（“ET策略可执行文件和链接格式文件下载”）。<br>
+5）Rsh根凭据（“协议-服务rsh根”）。<br>
+6）DDoS（“LLDoS确认DDoS”）。<br>
+展示了该攻击活动触发的警报，以及它们如何映射到攻击事件和阶段。例如，我们将针对不同的主机发起的多个“协议-ICMP ping”聚合为一个事件，即ICMP ping。由于“ICMP ping”和“Sadmind UDP ping”具有相同的检测主机或端口的分阶段目标，我们将它们归类为“侦察”。</p>
+</blockquote>
+<img src="/2025/02/12/lactdet-an-automatic-network-attack-activity-detection-framework-for-multi-step-attacks/P2-1.png" class="" title="P2-1 alt text">  
+<h3 id="方法：">方法：</h3>
+<p>LActDet以警报作为输入，通过<strong>攻击事件提取</strong>和<strong>攻击阶段嵌入</strong>获得活动的向量表示，并最终输出活动类型。</p>
+<ol>
+<li>
+<p>攻击事件提取：警报（多个相似警报的中等粒度描述）-&gt;攻击事件（映射到向量空间）。<br>
+去重：<br>
+● 为什么去重？例如攻击者会以相同的方式扫描同一台主机的m个不同端口，每个端口扫描动作都会触发一个扫描警报。如果攻击者扫描n个不同的主机，则有m*n个警报。<br>
+● 怎么去重？基于四元组信息（目的地IP、源IP、时间戳以及警报上下文中的消息字段）对相同的警报进行去重。<br>
+聚合：<br>
+根据攻击者和受害主机的数量，将事件识别为一对一、一对多和多对一。对于一对多事件，我们将具有不同目的地IP但具有相同三个特征的警报抽象为一个警报，并使用相同的方法对多对一类型的警报进行去重。得到攻击事件序列$E$。（能得到几个攻击事件序列？真实的场景中，只有一个攻击者在活动吗？）<br>
+嵌入：<br>
+事件($E$)-(Doc2Vec)-&gt;嵌入($E’={e’_1, e’_2, e’_3, …, e’_m}$)</p>
+</li>
+<li>
+<p>攻击阶段嵌入：事件嵌入列表($E’$)-&gt;攻击活动向量($A$)。<br>
+使用LSTM：攻击事件向量序列（$e_i^{\prime}$为$E’$第i个攻击事件的向量表示）编码成攻击阶段向量序列（$p’_j$为$P’$第j个攻击阶段的向量表示）<br>
+$p’<em>j=\frac{1}{m}\sum</em>{e’_i\in P_j}e’_i,$ （$P’$是什么？如何确定哪几个事件是属于同一个阶段的？）<br>
+全连接分类：（还有一个dropout层）判断攻击活动类别。</p>
+</li>
+</ol>
+<img src="/2025/02/12/lactdet-an-automatic-network-attack-activity-detection-framework-for-multi-step-attacks/P2-2.png" class="" title="P2-2 alt text">
+<h3 id="实验：">实验：</h3>
+<p>LActDet使用Python 3.8实现，使用PyTorch 2.0.1开发攻击阶段嵌入和攻击活动分类模型。实验在CentOS服务器上进行，使用Suricata 5.0.7生成警报数据。<br>
+数据集：DARPA2000、ISCXIDS2012、Strato-sphere实验室恶意软件捕获设施项目，以及一个由流行模拟工具生成的APT数据集：BPS。<br>
+详细如下：</p>
+<blockquote>
+<p>DARPA2000包括两种DDoS攻击活动：LL-DOS1.0和LLDOS2.0.2。敌手实施多种攻击动作以渗透局域网，然后控制僵尸网络发起DDoS攻击。这两种攻击活动的区别在于，LLDOS2.0.2通过入侵多个主机作为跳板来攻击局域网内的其他主机，而LLDOS1.0则直接以相同方式攻击多个主机。<br>
+我们从数据库ISCX-IDS2012中选取了三种攻击活动：渗透、暴力破解SSH和HTTP DoS。渗透尝试通过反向TCP shell入侵跳板，然后跳板执行扫描、SQL注入、远程登录尝试以及控制其他主机的shell。暴力破解SSH扫描端口22并运行字典爆炸攻击以获取SSH账户。HTTP DoS是一种隐蔽的、低带宽的拒绝服务攻击活动，无需洪水攻击网络。<br>
+心脏滴血和想哭选自Strato-sphere实验室恶意软件捕获设施项目。心脏滴血活动使用公共Python漏洞进行无限循环利用，并且每次获取的信息都不同。想哭勒索软件活动实施端口扫描、漏洞利用和蠕虫攻击。<br>
+高级持续性威胁（APT）攻击是重要的多步骤攻击，对网络安全构成重大挑战。我们使用安全模拟工具BPS生成了五种APT攻击，包括IcedID、Andariel-2019、APT-29、浣熊和AZORult。所有上述APT攻击都包含多个持续较长时间的攻击步骤。</p>
+</blockquote>
+<h2 id="Question">Question:</h2>
 
             </div>
 
@@ -255,8 +276,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://example.com/2025/02/10/Research-of-AttackDetect/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://example.com/2025/02/10/Research-of-AttackDetect/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://example.com/2025/02/12/lactdet-an-automatic-network-attack-activity-detection-framework-for-multi-step-attacks/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/12/lactdet-an-automatic-network-attack-activity-detection-framework-for-multi-step-attacks/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
