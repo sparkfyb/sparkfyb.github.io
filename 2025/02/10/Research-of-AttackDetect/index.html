@@ -188,7 +188,7 @@
 <td style="text-align:center">College of Cyber Science and Engineering, Sichuan University</td>
 <td style="text-align:center">2022</td>
 <td style="text-align:center">Neurocomputing</td>
-<td style="text-align:center"></td>
+<td style="text-align:center">LANL、CERT6.2</td>
 <td style="text-align:center">横向移动路径检测</td>
 </tr>
 <tr>
@@ -242,13 +242,34 @@ To address these challenges, we propose a framework, LActDet, to automatically i
 <p>Advanced Persistent Threats(APT) with the purpose of stealing confidential data take place all the time. In the APT life cycle, lateral movement is a critical stage towards high-level authority and confidential data. Existing lateral movement detection mainly concentrates on endpoint protection to distinguish compromised hosts. These approaches not only have unfortunate effect but also can not detect lateral movement behavior comprehensively. We design LMTracker, an attack path detection algorithm based on the heterogeneous graph, in order to make up for above shortcomings. LMTracker consists of three modules: heterogeneous graph construction, path representation generation, and unsupervised anomaly-based attack path detection. The core idea of LMTracker is to use event logs and traffic to establish heterogeneous graphs and generate representation vectors for lateral movement paths, then use unsupervised algorithm to implement anomaly-based path detection. This method can not only detect lateral movement paths effectively but also preserve the path relationships. Security professionals can use these paths to analyze attack activities. In two frequently-used public datasets, the evaluation results demonstrate that LMTracker performs significantly better than other methods and can adapt to attack detection in different scenarios. The area under the ROC curve is as high as 0.95.</p>
 </blockquote>
 <h3 id="Record-v4">Record:</h3>
-<p>传统方法关注使用系统调用链来阻止在指定的损坏主机上的攻击行为，即取证问题或主机分类问题$\color{FF0000}{/节点评分？/}$</p>
+<p>传统方法关注使用系统调用链来阻止在指定的损坏主机上的攻击行为，即取证问题或主机分类问题$\color{FF0000}{/节点评分？/}$<br>
+安全审计日志、流量-&gt;</p>
 <img src="/2025/02/10/Research-of-AttackDetect/P4-1.png" class="" title="P4-1 alt text">
 <ul>
-<li>异构图构建：</li>
-<li>路径表示生成：</li>
-<li>无监督基于异常的攻击路径检测：</li>
+<li>异构图构建：节点或边的类型是否相同-&gt;是否是异构图。
+<ul>
+<li>节点：计算机、用户、进程和文件。</li>
+<li>边：计算机之间的关系包括网络连接和用户的远程访问；计算机与用户之间的关系包括登录和使用。计算机与用户和进程的关系在于用户可以在计算机上创建或终止进程，文件与进程同理。文件可以执行进程，进程可以创建文件。</li>
+<li>横向移动的活动发生在计算机或用户之间。然而，在内部网络中，用户到用户的横向移动不能脱离计算机独立进行，必须借助计算机作为媒介。</li>
+<li>日志元组：$&lt;time,C_{src},U_{src},C_{dst},U_{dst},T,A(事件属性)&gt;$ T为事件类型：登录、登出、进程创建、文件创建等，A为属性；登录事件，有登录类型、认证类型、登录结果等。对于网络连接，包括协议、端口等。</li>
+<li>异构图 $&lt;V,E,T_V,T_E&gt;$</li>
 </ul>
+</li>
+<li>路径表示生成：
+<ul>
+<li>通过结合元路径引导的Random Walk和Skip-Gram模型来捕捉异质图中的复杂关系，并将其转化为可处理的向量形式。通过matapath2vec++（将随机游走限制在绑定的元路径上）随机游走采样序列后，使用Skip-Gram来学习节点表示，这种方法不仅保留了异质图中的结构信息，还保留了语义信息。</li>
+<li>专家-&gt;元路径 $\color{FF0000}{/需要预先给定特定的路径规则，但这个规则最好是学出来的/}$</li>
+<li>word2vec采用Skip-Gram</li>
+<li>在获得节点的嵌入表示后，路径由构成路径的所有边的第一个和最后一个节点的均方误差或平均绝对误差来表示</li>
+</ul>
+</li>
+<li>无监督基于异常的攻击路径检测：
+<ul>
+<li>自编码器能够学习未标记样本的数据特征，并以低损失重构它们。然而，不符合这些特征的数据的重构误差会很大。我们设计了一个包含多层神经网络的自编码器，用以区分良性路径与异常的横向移动路径，而不是使用聚类方法。$\color{FF0000}{/处理未标注数据的另一种方法/}$</li>
+</ul>
+</li>
+</ul>
+<p>数据集：2015年洛斯阿拉莫斯国家实验室（LANL）发布的全面的多源网络安全事件数据集LANL。卡内基梅隆大学软件工程学院发布的第6.2版合成内部威胁测试数据集CERT6.2。</p>
 <h2 id="Reference">Reference:</h2>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Eastmount/article/details/120555733">https://blog.csdn.net/Eastmount/article/details/120555733</a></p>
 
