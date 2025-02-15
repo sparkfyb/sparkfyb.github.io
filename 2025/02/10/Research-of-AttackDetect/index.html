@@ -192,6 +192,30 @@
 <td style="text-align:center">横向移动路径检测</td>
 </tr>
 <tr>
+<td style="text-align:center"><a href="#euler-detecting-network-lateral-movement-via-scalable-temporal-link-prediction">Euler: Detecting Network Lateral Movement via Scalable Temporal Link Prediction</a></td>
+<td style="text-align:center">The George Washington University, USA</td>
+<td style="text-align:center">2022</td>
+<td style="text-align:center">NDSS-2022</td>
+<td style="text-align:center">LANL</td>
+<td style="text-align:center">架构优化，链接预测</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#apt-kgl-an-intelligent-apt-detection-system-based-on-threat-knowledge-and-heterogeneous-provenance-graph-learning">APT-KGL: An Intelligent APT Detection System Based on Threat Knowledge and Heterogeneous Provenance Graph Learning</a></td>
+<td style="text-align:center">College of Computer Science andTechnology, Zhejiang University ofTechnology, Hangzhou, China</td>
+<td style="text-align:center">2022</td>
+<td style="text-align:center">IEEE Transactions on Dependable and Secure Computing</td>
+<td style="text-align:center">DARPA</td>
+<td style="text-align:center">节点分类</td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="#krystal-knowledge-graph-based-framework-for-tactical-attack-discovery-in-audit-data">KRYSTAL: Knowledge graph-based framework for tactical attack discovery in audit data</a></td>
+<td style="text-align:center">Vienna University of Economics and Business, Welthandelsplatz 1, Vienna, Austria</td>
+<td style="text-align:center">2022</td>
+<td style="text-align:center">Computers &amp; Security</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
@@ -270,6 +294,83 @@ To address these challenges, we propose a framework, LActDet, to automatically i
 </li>
 </ul>
 <p>数据集：2015年洛斯阿拉莫斯国家实验室（LANL）发布的全面的多源网络安全事件数据集LANL。卡内基梅隆大学软件工程学院发布的第6.2版合成内部威胁测试数据集CERT6.2。</p>
+<p>代码：<a target="_blank" rel="noopener" href="https://github.com/quanghuy-ngo/LMTracker/tree/master/DARPA">https://github.com/quanghuy-ngo/LMTracker/tree/master/DARPA</a></p>
+<h2 id="Euler-Detecting-Network-Lateral-Movement-via-Scalable-Temporal-Link-Prediction">Euler: Detecting Network Lateral Movement via Scalable Temporal Link Prediction</h2>
+<p><em>Year: 2022, Author: The George Washington University, USA</em></p>
+<h3 id="Abstract-v5">Abstract:</h3>
+<blockquote>
+<p>Lateral movement is a key stage of system compromise used by advanced persistent threats. Detecting it is no simple task. When network host logs are abstracted into discrete temporal graphs, the problem can be reframed as anomalous edge detection in an evolving network. Research in modern deep graph learning techniques has produced many creative and complicated models for this task. However, as is the case in many machine learning fields, the generality of models is of paramount importance for accuracy and scalability during training and inference. In this article, we propose a formalized approach to this problem with a framework we call Euler. It consists of a model-agnostic graph neural network stacked upon a model-agnostic sequence encoding layer such as a recurrent neural network. Models built according to the Euler framework can easily distribute their graph convolutional layers across multiple machines for large performance improvements. Additionally, we demonstrate that Euler-based models are as good, or better, than every state-of-the-art approach to anomalous link detection and prediction that we tested. As anomaly-based intrusion detection systems, our models efficiently identified anomalous connections between entities with high precision and outperformed all other unsupervised techniques for anomalous lateral movement detection. Additionally, we show that as a piece of a larger anomaly detection pipeline, Euler models perform well enough for use in real-world systems. With more advanced, yet still lightweight, alerting mechanisms ingesting the embeddings produced by Euler models, precision is boosted from 0.243, to 0.986 on real-world network traffic.</p>
+</blockquote>
+<h3 id="Record-v5">Record:</h3>
+<p>将异常横向移动检测构建为一个时间图链接预测问题。<br>
+现有方法结合了图神经网络（GNN）和序列编码器（如循环神经网络RNN）来捕捉演变网络的拓扑和时间特征：</p>
+<img src="/2025/02/10/Research-of-AttackDetect/P5-1.png" class="" title="P5-1 alt text">
+<p>先前的方法在嵌入的 GNN 阶段依赖于 RNN 输出，或者仅仅将 GNN 合并到 RNN 架构中，这迫使模型串行工作，一次一个快照。EULER 框架可以利用多个工作机器来保存离散时间图的连续快照。这些工作人员通过每台机器共享的复制 GNN 并行处理快照。$\color{FF0000}{/暂时不关心架构的变化/}$<br>
+这篇文章使用了快照（离散时间图）以实现并行。$G={G_1,G_2,…,G_T}, G_t={V,\Epsilon_t,X_t}$，这里，V表示网络中出现的所有节点的集合，Et表示t时刻节点之间的关系，Xt表示t时刻与节点相关的任何特征。在这项工作中，所有的图都是有向的，一些有加权边，$W: E\rightarrow R$表示每个快照所包含的时间段内的边缘频率。<br>
+用户与网络中机器在特定时间的交互$I$表示为多组$&lt;src、dst、ts&gt;$。在这里，src是一个在ts时刻与实体dst交互的实体。从这个多集出发，我们可以构建具有时间窗δ的时间图$G={G_0,…,G_T}$，取时间窗为$[t,t+δ)$。<br>
+数据集：LANL，代码：<a target="_blank" rel="noopener" href="https://github.com/iHeartGraph/Euler">https://github.com/iHeartGraph/Euler</a></p>
+<h2 id="APT-KGL-An-Intelligent-APT-Detection-System-Based-on-Threat-Knowledge-and-Heterogeneous-Provenance-Graph-Learning">APT-KGL: An Intelligent APT Detection System Based on Threat Knowledge and Heterogeneous Provenance Graph Learning</h2>
+<p><em>Year: 2022, Author: College of Computer Science andTechnology, Zhejiang University ofTechnology, Hangzhou, China</em></p>
+<h3 id="Abstract-v6">Abstract:</h3>
+<blockquote>
+<p>APTs (Advanced Persistent Threats) have caused serious security threats worldwide. Most existing APT detection systems are implemented based on sophisticated forensic analysis rules. However, the design of these rules requires in-depth domain knowledge and the rules lack generalization ability. On the other hand, deep learning technique could automatically create detection model from training samples with little domain knowledge. However, due to the persistence, stealth, and diversity of APT attacks, deep learning technique suffers from a series of problems including difficulties of capturing contextual information, low scalability, dynamic evolving of training samples, and scarcity of training samples. Aiming at these problems, this paper proposes APT-KGL, an intelligent APT detection system based on provenance data and graph neural networks. First, APT-KGL models the system entities and their contextual information in the provenance data by a HPG (Heterogeneous Provenance Graph), and learns a semantic vector representation for each system entity in the HPG in an offline way. Then, APT-KGL performs online APT detection by sampling a small local graph from the HPG and classifying the key system entities as malicious or benign. In addition, to conquer the difficulty of collecting training samples of APT attacks, APT-KGL creates virtual APT training samples from open threat knowledge in a semi-automatic way. We conducted a series of experiments on two provenance datasets with simulated APT attacks. The experiment results show that APT-KGL outperforms other current deep learning based models, and has competitive performance against state-of-the-art rule-based APT detection systems.</p>
+</blockquote>
+<h3 id="Record-v6">Record:</h3>
+<p>APT-KGL总体架构如下：</p>
+<img src="/2025/02/10/Research-of-AttackDetect/P6-1.png" class="" title="P6-1 alt text">
+<ul>
+<li>Provenance Graph Construction: 图节点包括进程、文件、套接字、进程间通信（IPC）、内存、网络和属性，关系有8种。
+<ul>
+<li>溯源图转为异构图：溯源图考虑系统实体的具体实例（例如，每个不同的文件被视为完全不同的节点）。相反，HPG使用泛化概念来定义每个节点。例如，不同文件之间的语义关系可以通过共同属性节点来捕获，这有助于学习泛化模式。</li>
+</ul>
+</li>
+<li>Heterogeneous Graph Learning: $V\rightarrow R^d$
+<ul>
+<li>HPG包含多种类型的节点和边，传统的图嵌入技术（例如，DeepWalk、node2vec、LINE）无法解决这个问题，因此引入了随机游走者来连接各种类型的节点，在元路径上为每个节点生成一组邻居。</li>
+<li>元路径：元路径是在HPG模式中定义的路径$A_1→R_1→A_2→R_2→…→R_{L−1}→A_L$，$R = R_1◦R_2◦R_{L−1}$。在实践中，一个元路径中的A1和AL通常具有相同的节点类型，因此随机游走在一个元路径上结束，可以立即在另一个元路径上开始。具体长这样：</li>
+</ul>
+<img src="/2025/02/10/Research-of-AttackDetect/P6-2.png" class="" title="P6-2 alt text">
+<ul>
+<li>用的模型是HGAT。</li>
+</ul>
+</li>
+<li>APT Detector: 与其他方法不同的是，这里没有使用链接预测，而是直接对“进程”类别节点进行分类。
+<ul>
+<li>增量方法：对于不断处理新进入的系统实体，频繁重新运行HPG嵌入程序是不可行的。基于局部图采样的APT检测策略。新实体交互的系统实体（记为NVS），将NVS中的每个系统实体链接到现有的HPG（组合图记为CG，属性能保证全都有连到），从CG采样一个子图SG。</li>
+<li>节点分类模型是R-GCN。</li>
+</ul>
+</li>
+<li>Threat Knowledge Extraction: 从CTI或TTP中提取威胁知识，并以半自动的方式将威胁知识建模为查询图（提取APT HPG -&gt; 加入良性噪声）。</li>
+</ul>
+<p>数据集：实验自制和DARPA数据集。源码来自：<a target="_blank" rel="noopener" href="https://github.com/hwwzrzr/APT-KGL">https://github.com/hwwzrzr/APT-KGL</a></p>
+<h2 id="KRYSTAL-Knowledge-graph-based-framework-for-tactical-attack-discovery-in-audit-data">KRYSTAL: Knowledge graph-based framework for tactical attack discovery in audit data</h2>
+<p><em>Year: 2022, Author: Vienna University of Economics and Business, Welthandelsplatz 1, Vienna, Austria</em></p>
+<h3 id="Abstract-v7">Abstract:</h3>
+<blockquote>
+<p>Attack graph-based methods are a promising approach towards discovering attacks and various techniques have been proposed recently. A key limitation, however, is that approaches developed so far are monolithic in their architecture and heterogeneous in their internal models. The inflexible custom data models of existing prototypes and the implementation of rules in code rather than declarative languages on the one hand make it difficult to combine, extend, and reuse techniques, and on the other hand hinder reuse of security knowledge – including detection rules and threat intelligence. KRYSTAL tackles these challenges by providing a knowledge graph-based, modular framework for threat detection, attack graph and scenario reconstruction, and analysis based on RDF as a standard model for knowledge representation. This approach provides query options that facilitate contextualization over internal and external background knowledge, as well as the integration of multiple detection techniques, including tag propagation, attack signatures, and graph queries. We implemented our framework in an openly available prototype and demonstrate its applicability on multiple scenarios of the DARPA Transparent Computing dataset. Our evaluation shows that the combination of different threat detection techniques within our framework improved detection capabilities. Furthermore, we find that RDF provenance graphs are scalable and can efficiently support a variety of threat detection techniques.</p>
+</blockquote>
+<h3 id="Record-v7">Record:</h3>
+<p>几个之前没见过的亮点：1、同时使用了溯源图和攻击图，2、对外部知识使用查询，3、知识推理，4、攻击链路-&gt;TTP的映射；KRYSTAL整体流程图如下所示：</p>
+<img src="/2025/02/10/Research-of-AttackDetect/P7-1.png" class="" title="P7-1 alt text">  
+<ul>
+<li>溯源图构建：审计日志-&gt;溯源图json-&gt;rdf表达 $\color{FF0000}{/没看懂这个地方推理是如何起作用的/}$，图压缩：URI去重、HDT压缩。</li>
+<li>威胁检测和告警：
+<ul>
+<li>衰减和衰变：利用Tag attenuation和Tag decay解决dependence explosion（出处图中的一个节点与大量的系统对象互动时，就会出现这种情况，导致大量的良性事件被标记为攻击的一部分）$\color{FF0000}{/看论文里这一部分也是基于推理和规则进行的，但是我并不了解/}$</li>
+<li>基于溯源图的告警：查询是否满足某种条件？（类似攻击图的安全条件，我怎么知道满足哪些条件的时候告警？靠专家编规则吗？）</li>
+<li>基于签名和规则的威胁检测：</li>
+</ul>
+<img src="/2025/02/10/Research-of-AttackDetect/P7-2.png" class="" title="P7-2 alt text">
+红色部分是所谓映射，KRYSTAL使用了<a href="#https://github.com/SigmaHQ/sigma">Sigma</a> 作为规则，其中包含了有关TTP的映射。<br>
+$\color{FF0000}{/完全没看懂/}$</li>
+<li>攻击图构建：一旦构建了起源图并引发了警报，下一个重要步骤是了解警报是如何关联的，并重新构建潜在的攻击步骤。为此，我们通过后向-前向链接和图查询这两个步骤，从起源图构建攻击图和攻击场景。
+<ul>
+<li>反向-正向链接用于首先识别攻击的潜在根本原因，然后重建整个攻击步骤。由于基于来源的警报可能会产生大量警报，我们需要对它们进行优先级排序，并识别攻击的潜在根本原因警报。这可以通过在向后搜索期间分配警报分数来实现，即递增路径上每个在先警报的警报分数。</li>
+<li>图查询可以基于攻击模式检测起源图中的攻击行为。图形查询模式可以从观察到的行为或发布的CTI、事故报告、公共恶意软件文档等中的现有信息中构建。在此基础上，可以手动构建模式，或者通过自动提取方法构建模式。</li>
+</ul>
+</li>
+</ul>
+<p>数据集：DARPA TC</p>
 <h2 id="Reference">Reference:</h2>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Eastmount/article/details/120555733">https://blog.csdn.net/Eastmount/article/details/120555733</a></p>
 
