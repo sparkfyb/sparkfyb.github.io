@@ -1,0 +1,292 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Blogs of Bin
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 7.3.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Spark</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">Home</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">Categories</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="About">
+		                About
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="Tags">
+		                Tags
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/works/" title="Works">
+		                Works
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/sparkfyb" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >How To Map Attack</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1>Abstract:</h1>
+<p>要想还原出攻击图，需要想办法从日志或者流量（还有告警，但是告警可以从这里面生成）数据映射到战技术和攻击阶段；先在这里列出可能的难点，阅读论文查看方法，再对应难点进行解析。</p>
+<ul>
+<li>一个日志/流量数据，往往包含大量的正常记录，从正常检测出可能存在问题的记录。</li>
+<li>在一个网络拓扑环境中，可能存在多个攻击者，或者一个攻击者可能同时进行多个攻击活动；如何对可能存在的并行攻击活动进行聚合。</li>
+<li>可供判断的记录可能是从环境中不同位置收集的；如何融合和统一化表示这些多源（来自不同设备）异构（日志、流量、告警）的数据。</li>
+</ul>
+<p>重复说明，当前的形式和任务是——找到可行的映射方法，暂时不关心是否有效或可能解决上述问题。</p>
+<h1>Content</h1>
+<h2 id="LActDet-An-Automatic-Network-Attack-Activity-Detection-Framework-for-Multi-step-Attacks">LActDet: An Automatic Network Attack Activity Detection Framework for Multi-step Attacks</h2>
+<p>在背景阶段有一段表述是：</p>
+<blockquote>
+<p>在网络入口部署网络入侵检测系统（NIDS）是针对中小型企业的公共wifi、移动网络和局域网的通用安全解决方案。NIDS生成警报，并将其发送到安全事件分析中心，如安全操作中心（SOC）。分析中心首先利用基于规则的工具对这些原始警报进行过滤、重复数据删除并关联，并依靠手动分析确定攻击活动的类型。传统的解决方案有两个限制。</p>
+</blockquote>
+<p>基本流程为：网络入口流量-&gt;生成警报-&gt;基于规则过滤去重关联-&gt;手动分析确定攻击类型。文章给了一个SOC的研究：Matched and mismatched socs: A qualitative study on security operations center issues.</p>
+<p>本文章的内容重点看IV. METHODOLOGY的C. Attack Event Extractor：</p>
+<blockquote>
+<p>攻击事件提取器旨在从警报中提取攻击事件，该警报是对多个类似警报的中粒度描述，并将攻击事件映射到向量空间。为实现这一目标，实施了三个步骤。<br>
+(1) 重复数据消除。NIDS每天生成大量的警报，这些警报粒度太细，而且高度重复。例如，对于扫描局域网中主动主机的攻击尝试，攻击者以相同的方式扫描同一主机的m个不同端口，每个端口扫描动作都会触发扫描警报。如果攻击者扫描不同的主机，将生成警报。分析人员必须从大规模警报中提取有价值的信息，这是一个巨大的负担。因此，提取由同一攻击动作触发的多个类似警报的求和性描述是必要的。我们根据四元组信息（目标IP、源IP、时间戳和警报上下文中的消息字段）对相同的警报进行重复删除。<br>
+(2) 聚集。然后，我们根据攻击者和受害者主机的数量，将一个事件识别为一对一、一对多和多对一。对于一对多事件，我们将具有不同目标ip和相同的三个功能的警报抽象为一个警报，并使用相同的方法来删除多对一类型的重复警报。这样，我们就提取了攻击事件序列E。<br>
+(3) 映射。（暂不关心）</p>
+</blockquote>
+<p>以及D. Attack Phase Embedder</p>
+<blockquote>
+<p>我们利用一个基于LSTM的seq2seq模型，将攻击-事件-向量序列自动编码为攻击-阶段-向量序列。它由两个级联的LSTM网络组成。主LSTM作为一个编码器，将每个攻击事件向量转换为相应的隐藏向量，并将它们封装到潜在向量中。解码器反转该过程，将潜在向量转换为初始状态，并输出攻击相位向量序列。我们选择了少量的攻击活动来训练这个seq2seq模型。对于训练样本，我们根据专家经验确定每个事件的阶段，并根据$p’<em>j=\frac{1}{m}\sum</em>{e’_i\in P_j}e’_i$将具有相同阶段的攻击事件编码为攻击阶段向量.</p>
+</blockquote>
+<p>下面结合源码进行说明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">def event_extraction(sample_path, dv_model, np_path, log):</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line">    alert去重, 获得attack event</span><br><span class="line">    输出: 按攻击阶段排序, 每一行表示一个event</span><br><span class="line">    &#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">    df = pd.read_csv(sample_path, low_memory=False)</span><br><span class="line">    #df = pd.read_excel(sample_path, engine=&#x27;openpyxl&#x27;)</span><br><span class="line">    df[&#x27;timestamp&#x27;] = pd.to_datetime(df[&#x27;timestamp&#x27;])</span><br><span class="line">    df[&#x27;timestamp&#x27;] = df[&#x27;timestamp&#x27;].dt.hour   # 只保留小时</span><br><span class="line"></span><br><span class="line">    newdf = df.drop_duplicates(subset = [&#x27;timestamp&#x27;, &#x27;sig_id&#x27;, &#x27;ip_src&#x27;, &#x27;src_port&#x27;, &#x27;ip_dst&#x27;, &#x27;dst_port&#x27;])    # 去重</span><br><span class="line">    #tmp = newdf.drop(columns = df.columns[[0, 1, 2, 3, 8, 9, 10, 11, 14]])</span><br><span class="line">    tmp = newdf[newdf.columns[4:5]]# .drop(columns = df.columns[[0, 1, 2, 3, 8, 9, 10, 11, 14]])</span><br><span class="line"></span><br><span class="line">    basename = os.path.basename(sample_path)    # filename.xlsx</span><br><span class="line">    (filename, suffix) = os.path.splitext(basename)</span><br><span class="line">    phase_dict, event_vector_set = event_to_phaseDict(df)</span><br><span class="line">    phase_vector_sequence = obtain_activity_vector(phase_dict, filename, dv_model, log)</span><br><span class="line">    event_vector_sequence = obtain_event_vector(event_vector_set, filename, dv_model, log)</span><br><span class="line">    return phase_vector_sequence, event_vector_sequence</span><br><span class="line"></span><br><span class="line">def event_to_phaseDict(df):</span><br><span class="line">    &#x27;&#x27;&#x27;aggregate event from excel into attack phases&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">    phase_dict = dict([(k, []) for k in attack_phase])</span><br><span class="line">    event_vector_set = []</span><br><span class="line"></span><br><span class="line">    for indexs in df.index:</span><br><span class="line">        # alert = df.loc[indexs].values[:-1]     # attack_phase field is discarded</span><br><span class="line">        alert = df.loc[indexs]</span><br><span class="line"></span><br><span class="line">        line = &quot;\t&quot;.join([str(al) for al in alert])  # fields in an event are seperated by &#x27;\t&#x27;</span><br><span class="line">        </span><br><span class="line">        event_vector_set.append(line)</span><br><span class="line"></span><br><span class="line">        key = df.loc[indexs].values[-1]</span><br><span class="line">        if pd.isnull(key):</span><br><span class="line">            continue</span><br><span class="line">        else:</span><br><span class="line">            phase_dict[key].append(line)</span><br><span class="line">    return phase_dict, event_vector_set</span><br></pre></td></tr></table></figure>
+<p>源码给出的示例数据是ISCXIDS2012中的 Bruteforce 告警数据（对于一般日志文件文章建议使用开源软件Suricata 5.0.7生成），接下来一步一步看如何对应处理过程：</p>
+<p>告警-&gt;事件：</p>
+<ul>
+<li>去重：经过去重处理后总量96-&gt;72，本身告警密度好像就不高。</li>
+<li>聚合：论文里的聚合是根据攻击者和受害者的对应数量进行的，对于1:n和n:1相同的警报类别和时间（小时）只保留一个（原文表述为alert as）；而源码直接没有体现聚合过程，在<code>event_to_phaseDict</code>中的event_vector_set直接用alert聚合了，得到事件。</li>
+</ul>
+<p>事件-&gt;阶段：</p>
+<ul>
+<li>比较明确，就是标注了数据训练一个LSTM。</li>
+</ul>
+<h2 id="Matched-and-mismatched-socs-A-qualitative-study-on-security-operations-center-issues">Matched and mismatched socs: A qualitative study on security operations center issues</h2>
+<p>来自</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://example.com/2025/02/18/how-to-map-attack/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://example.com/2025/02/18/how-to-map-attack/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a target="_blank" rel="noopener" href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

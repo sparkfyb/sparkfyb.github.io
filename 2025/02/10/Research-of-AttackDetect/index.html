@@ -212,8 +212,8 @@
 <td style="text-align:center">Vienna University of Economics and Business, Welthandelsplatz 1, Vienna, Austria</td>
 <td style="text-align:center">2022</td>
 <td style="text-align:center">Computers &amp; Security</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<td style="text-align:center">DARPA TC</td>
+<td style="text-align:center">全链条知识推理方法</td>
 </tr>
 <tr>
 <td style="text-align:center"></td>
@@ -281,7 +281,7 @@ To address these challenges, we propose a framework, LActDet, to automatically i
 </li>
 <li>路径表示生成：
 <ul>
-<li>通过结合元路径引导的Random Walk和Skip-Gram模型来捕捉异质图中的复杂关系，并将其转化为可处理的向量形式。通过matapath2vec++（将随机游走限制在绑定的元路径上）随机游走采样序列后，使用Skip-Gram来学习节点表示，这种方法不仅保留了异质图中的结构信息，还保留了语义信息。</li>
+<li>通过结合元路径引导的Random Walk和Skip-Gram模型来捕捉异质图中的复杂关系，并将其转化为可处理的向量形式。通过metapath2vec++（将随机游走限制在绑定的元路径上）随机游走采样序列后，使用Skip-Gram来学习节点表示，这种方法不仅保留了异质图中的结构信息，还保留了语义信息。</li>
 <li>专家-&gt;元路径 $\color{FF0000}{/需要预先给定特定的路径规则，但这个规则最好是学出来的/}$</li>
 <li>word2vec采用Skip-Gram</li>
 <li>在获得节点的嵌入表示后，路径由构成路径的所有边的第一个和最后一个节点的均方误差或平均绝对误差来表示</li>
@@ -356,7 +356,7 @@ To address these challenges, we propose a framework, LActDet, to automatically i
 <li>溯源图构建：审计日志-&gt;溯源图json-&gt;rdf表达 $\color{FF0000}{/没看懂这个地方推理是如何起作用的/}$，图压缩：URI去重、HDT压缩。</li>
 <li>威胁检测和告警：
 <ul>
-<li>衰减和衰变：利用Tag attenuation和Tag decay解决dependence explosion（出处图中的一个节点与大量的系统对象互动时，就会出现这种情况，导致大量的良性事件被标记为攻击的一部分）$\color{FF0000}{/看论文里这一部分也是基于推理和规则进行的，但是我并不了解/}$</li>
+<li>衰减和衰变：利用Tag attenuation和Tag decay解决dependence explosion（出处图中的一个节点与大量的系统对象互动时，就会出现这种情况，导致大量的良性事件被标记为攻击的一部分）$\color{FF0000}{/看论文里这一部分也是基于推理和规则进行的/}$</li>
 <li>基于溯源图的告警：查询是否满足某种条件？（类似攻击图的安全条件，我怎么知道满足哪些条件的时候告警？靠专家编规则吗？）</li>
 <li>基于签名和规则的威胁检测：</li>
 </ul>
